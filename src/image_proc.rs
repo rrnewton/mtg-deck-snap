@@ -27,19 +27,35 @@ const MAX_TILE_DIM: u32 = 1536;
 const TILE_OVERLAP: u32 = 192;
 
 /// If the longest side is below this threshold, send the whole image as one tile.
-const NO_TILE_THRESHOLD: u32 = 2048;
+const NO_TILE_THRESHOLD: u32 = 4096;
+
+/// Images wider than this are downscaled before tiling so we don't generate
+/// an excessive number of tiles.  Card titles remain readable at this scale.
+const MAX_IMAGE_DIM: u32 = 4096;
 
 /// Load an image from disk and split it into tiles suitable for AI vision.
 pub fn load_and_tile(path: &Path) -> Result<Vec<Tile>> {
     let img = image::open(path)
         .with_context(|| format!("failed to open image {}", path.display()))?;
-    let (w, h) = img.dimensions();
+    let (orig_w, orig_h) = img.dimensions();
     eprintln!(
         "Loaded image {} ({}×{})",
         path.file_name().unwrap_or_default().to_string_lossy(),
-        w,
-        h,
+        orig_w,
+        orig_h,
     );
+
+    // Downscale if needed so we don't create too many tiles
+    let img = if orig_w.max(orig_h) > MAX_IMAGE_DIM {
+        let scale = MAX_IMAGE_DIM as f64 / orig_w.max(orig_h) as f64;
+        let new_w = (orig_w as f64 * scale) as u32;
+        let new_h = (orig_h as f64 * scale) as u32;
+        eprintln!("Downscaling to {}×{} for tiling", new_w, new_h);
+        img.resize(new_w, new_h, image::imageops::FilterType::Lanczos3)
+    } else {
+        img
+    };
+    let (w, h) = img.dimensions();
 
     // If small enough, send as one tile
     if w.max(h) <= NO_TILE_THRESHOLD {

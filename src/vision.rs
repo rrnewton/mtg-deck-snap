@@ -74,7 +74,10 @@ pub async fn extract_card_names(
     tiles: &[Tile],
     deck_size_hint: Option<u32>,
 ) -> Result<Vec<String>> {
-    let client = reqwest::Client::new();
+    let client = reqwest::Client::builder()
+        .timeout(std::time::Duration::from_secs(120))
+        .build()
+        .context("building HTTP client")?;
 
     let pb = ProgressBar::new(tiles.len() as u64);
     pb.set_style(
