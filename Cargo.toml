@@ -1,0 +1,20 @@
+[package]
+name = "mtg-deck-snap"
+version = "0.1.0"
+edition = "2021"
+description = "Convert photographs of MTG card spreads into .dck deck list files"
+
+[dependencies]
+image = "0.25"
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+strsim = "0.11"
+clap = { version = "4", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
+dialoguer = "0.11"
+base64 = "0.22"
+deunicode = "1"
+anyhow = "1"
+dirs = "6"
+indicatif = "0.17"
