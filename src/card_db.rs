@@ -1,5 +1,6 @@
 //! Card database: loads canonical MTG card names from Scryfall or a Forge cardsfolder.
 
+use crate::set_coherence::SetIndex;
 use anyhow::{Context, Result};
 use indicatif::{ProgressBar, ProgressStyle};
 use std::collections::HashSet;
@@ -21,13 +22,19 @@ struct BulkDataMeta {
     download_uri: String,
 }
 
-/// Minimal card object – we only need the `name` field.
+/// Minimal card object – we only need the `name` and `set` fields.
 #[derive(serde::Deserialize)]
 struct ScryfallCard {
     name: String,
     /// Layout helps us decide whether to keep the full double-faced name.
     #[serde(default)]
     layout: String,
+    /// Set code (e.g. "tla" for Avatar: The Last Airbender).
+    #[serde(default)]
+    set: String,
+    /// Set name (e.g. "Avatar: The Last Airbender").
+    #[serde(default)]
+    set_name: String,
 }
 
 // All public API is intentional — `contains` is available for downstream use.
@@ -123,7 +130,56 @@ impl CardDatabase {
         std::fs::write(&cache_path, json)?;
         eprintln!("Cached {} unique card names to {}", names.len(), cache_path.display());
 
+        // Also build and cache set index
+        let mut set_entries = Vec::with_capacity(cards.len() * 2);
+        for card in &cards {
+            if !card.set.is_empty() {
+                set_entries.push((card.name.clone(), card.set.clone(), card.set_name.clone()));
+                // Also add split halves
+                if card.layout == "transform"
+                    || card.layout == "modal_dfc"
+                    || card.layout == "split"
+                    || card.layout == "adventure"
+                    || card.layout == "flip"
+                {
+                    for half in card.name.split(" // ") {
+                        set_entries.push((
+                            half.trim().to_string(),
+                            card.set.clone(),
+                            card.set_name.clone(),
+                        ));
+                    }
+                }
+            }
+        }
+        let set_index = SetIndex::from_entries(set_entries);
+
+        // Persist set index to cache
+        let set_cache_path = Self::set_cache_path()?;
+        let set_json = serde_json::to_string(&set_index)?;
+        std::fs::write(&set_cache_path, set_json)?;
+        eprintln!(
+            "Cached {} card set entries to {}",
+            set_index.len(),
+            set_cache_path.display()
+        );
+
         Ok(Self::from_names(names))
+    }
+
+    /// Load the set index from cache (built during Scryfall download).
+    pub fn load_set_index() -> Result<SetIndex> {
+        let path = Self::set_cache_path()?;
+        if path.exists() {
+            let data = std::fs::read_to_string(&path)
+                .context("reading cached set index")?;
+            let idx: SetIndex =
+                serde_json::from_str(&data).context("parsing cached set index")?;
+            Ok(idx)
+        } else {
+            // Return empty index if not cached yet
+            Ok(SetIndex::from_entries(Vec::new()))
+        }
     }
 
     /// Load names from a Forge-style `cardsfolder/` directory.
@@ -230,6 +286,13 @@ impl CardDatabase {
             .context("could not determine cache directory")?
             .join("mtg-deck-snap");
         Ok(cache_dir.join("scryfall-names.json"))
+    }
+
+    fn set_cache_path() -> Result<PathBuf> {
+        let cache_dir = dirs::cache_dir()
+            .context("could not determine cache directory")?
+            .join("mtg-deck-snap");
+        Ok(cache_dir.join("scryfall-sets.json"))
     }
 }
 

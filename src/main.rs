@@ -4,6 +4,7 @@ mod card_db;
 mod dck;
 mod fuzzy_match;
 mod image_proc;
+mod set_coherence;
 mod validation;
 mod vision;
 mod wizard;
@@ -185,6 +186,46 @@ async fn cmd_scan(
     // 4. Print confidence table
     print_confidence_table(&matches);
 
+    // 4b. Set-coherence check — flag cards from unexpected sets
+    let set_index = card_db::CardDatabase::load_set_index()?;
+    if set_index.len() > 0 {
+        let matched_names: Vec<String> = matches.iter().map(|m| m.canonical.clone()).collect();
+        let set_results = set_index.check_coherence(&matched_names);
+        let outliers: Vec<_> = set_results.iter().filter(|r| r.is_outlier).collect();
+
+        if !outliers.is_empty() {
+            let majority_set = outliers[0]
+                .majority_set
+                .as_deref()
+                .unwrap_or("unknown");
+            eprintln!("\n── Set coherence check ─────────────────────────");
+            eprintln!("  Majority set: {}", majority_set);
+            for o in &outliers {
+                let set_name = o
+                    .card_set
+                    .as_ref()
+                    .map(|s| s.set_name.as_str())
+                    .unwrap_or("unknown");
+                eprintln!(
+                    "  ⚠ \"{}\" is from \"{}\" — possible false positive",
+                    o.card_name, set_name
+                );
+
+                // Downgrade confidence for outlier matches
+                if let Some(m) = matches.iter_mut().find(|m| m.canonical == o.card_name) {
+                    if m.confidence != fuzzy_match::Confidence::Exact {
+                        eprintln!(
+                            "    Downgrading confidence: {} → low",
+                            m.confidence
+                        );
+                        m.confidence = fuzzy_match::Confidence::Low;
+                    }
+                }
+            }
+            eprintln!();
+        }
+    }
+
     // 5. Interactive wizard for ambiguous matches
     let card_names = wizard::resolve(&mut matches, non_interactive);
 
@@ -254,17 +295,23 @@ fn print_confidence_table(matches: &[fuzzy_match::MatchResult]) {
     }
 
     eprintln!("── Match details ──────────────────────────────────────────────────────────────");
+    let hdr_name = "Card Name";
+    let hdr_ext = "Extracted As";
+    let hdr_score = "Score";
+    let hdr_conf = "Conf";
+    let hdr_qty = "Qty";
     eprintln!(
         "  {:<35} {:<25} {:>5}  {:<8}  {}",
-        "Card Name", "Extracted As", "Score", "Conf", "Qty"
+        hdr_name, hdr_ext, hdr_score, hdr_conf, hdr_qty
     );
+    let sep = "───";
     eprintln!(
         "  {:<35} {:<25} {:>5}  {:<8}  {}",
         "─".repeat(35),
         "─".repeat(25),
         "─".repeat(5),
         "─".repeat(8),
-        "───"
+        sep
     );
 
     // Build unique entries preserving first-seen order

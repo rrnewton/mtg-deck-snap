@@ -145,7 +145,7 @@ pub fn resolve_warnings(warnings: &[Warning], non_interactive: bool) -> bool {
 /// Interactive resolution for 4-of violations.
 ///
 /// Mutates entries in-place, capping counts if the user agrees.
-pub fn resolve_count_violations(entries: &mut Vec<DeckEntry>, non_interactive: bool) {
+pub fn resolve_count_violations(entries: &mut [DeckEntry], non_interactive: bool) {
     let basics = basic_land_names();
 
     for entry in entries.iter_mut() {
@@ -179,7 +179,7 @@ pub fn resolve_count_violations(entries: &mut Vec<DeckEntry>, non_interactive: b
 /// If the deck size is known, check whether the number of basic lands makes sense.
 /// Stacked/fanned lands are the most common source of miscounts.
 pub fn resolve_land_counts(
-    entries: &mut Vec<DeckEntry>,
+    entries: &mut [DeckEntry],
     expected_size: u32,
     non_interactive: bool,
 ) {
@@ -276,7 +276,7 @@ pub fn resolve_land_counts(
 
 /// Proportionally scale basic land counts to hit a target total.
 fn adjust_land_counts(
-    entries: &mut Vec<DeckEntry>,
+    entries: &mut [DeckEntry],
     basics: &HashSet<&str>,
     target_total: u32,
 ) {
