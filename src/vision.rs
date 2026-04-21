@@ -167,11 +167,16 @@ async fn extract_single_tile(
         "You are analyzing a photograph of Magic: The Gathering cards spread on a table. \
          The player has arranged the cards so that all card TITLES are visible (the full \
          card art/text may be obscured).{hint}\n\n\
-         List EVERY card name you can read in this image. Output ONLY card names, one per \
-         line, with no numbering, bullet points, or extra commentary.\n\
-         Include duplicates — if you see two copies of the same card, list the name twice.\n\
-         If you can only partially read a name, give your best guess followed by a ? suffix.\n\
-         If a name is completely illegible, skip it."
+         INSTRUCTIONS:\n\
+         1. Read each card's TITLE BAR carefully — it is the text at the very top of the card.\n\
+         2. Output ONLY card names, one per line, with no numbering, bullets, or commentary.\n\
+         3. Include duplicates — if you see two copies of the same card, list the name twice.\n\
+         4. For stacked basic lands (Island, Forest, etc.), count the number of cards in the \
+            stack by looking at the visible edges/corners. Be precise — do not guess.\n\
+         5. If you can only partially read a name, give your best guess followed by a ? suffix.\n\
+         6. If a name is completely illegible, skip it.\n\
+         7. Pay close attention to similar-looking letters: e vs o, i vs l, t vs f, etc.\n\
+         8. MTG card names are proper nouns — capitalize each word."
     );
 
     let request = MessagesRequest {

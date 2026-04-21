@@ -233,7 +233,11 @@ impl CardDatabase {
     }
 }
 
-/// Combined similarity score: 70 % Jaro-Winkler + 30 % normalised Levenshtein.
+/// Combined similarity score with word-level awareness.
+///
+/// Base: 60% Jaro-Winkler + 20% normalised Levenshtein + 20% word overlap.
+/// The word-overlap component prevents "Missile Sword" from matching
+/// "Mist Leopard" over "Meteor Sword" (shared word "Sword" is a strong signal).
 fn combined_similarity(a: &str, b: &str) -> f64 {
     let jw = strsim::jaro_winkler(a, b);
     let max_len = a.len().max(b.len());
@@ -242,5 +246,38 @@ fn combined_similarity(a: &str, b: &str) -> f64 {
     } else {
         1.0 - (strsim::levenshtein(a, b) as f64 / max_len as f64)
     };
-    0.70 * jw + 0.30 * norm_lev
+    let word_sim = word_overlap_score(a, b);
+    0.55 * jw + 0.20 * norm_lev + 0.25 * word_sim
+}
+
+/// Word-level overlap score.
+///
+/// Splits both strings into words and measures how many words in `a` have
+/// a close match in `b` (and vice versa), using Jaro-Winkler on individual words.
+fn word_overlap_score(a: &str, b: &str) -> f64 {
+    let words_a: Vec<&str> = a.split_whitespace().collect();
+    let words_b: Vec<&str> = b.split_whitespace().collect();
+    if words_a.is_empty() || words_b.is_empty() {
+        return 0.0;
+    }
+
+    // For each word in a, find its best match in b
+    let mut total = 0.0;
+    let count = words_a.len() + words_b.len();
+    for wa in &words_a {
+        let best = words_b
+            .iter()
+            .map(|wb| strsim::jaro_winkler(wa, wb))
+            .fold(0.0_f64, f64::max);
+        total += best;
+    }
+    // And vice versa (asymmetric matching can miss things)
+    for wb in &words_b {
+        let best = words_a
+            .iter()
+            .map(|wa| strsim::jaro_winkler(wa, wb))
+            .fold(0.0_f64, f64::max);
+        total += best;
+    }
+    total / count as f64
 }
