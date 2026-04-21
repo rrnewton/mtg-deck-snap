@@ -66,7 +66,7 @@ impl VisionConfig {
     }
 }
 
-/// Extract card names from a list of tiles.
+/// Extract card names from a list of tiles (pass 1 — identification).
 ///
 /// Each tile is sent as a separate API call; the results are merged.
 pub async fn extract_card_names(
@@ -74,10 +74,7 @@ pub async fn extract_card_names(
     tiles: &[Tile],
     deck_size_hint: Option<u32>,
 ) -> Result<Vec<String>> {
-    let client = reqwest::Client::builder()
-        .timeout(std::time::Duration::from_secs(120))
-        .build()
-        .context("building HTTP client")?;
+    let client = build_client()?;
 
     let pb = ProgressBar::new(tiles.len() as u64);
     pb.set_style(
@@ -98,6 +95,62 @@ pub async fn extract_card_names(
 
     pb.finish_with_message("done");
     Ok(all_names)
+}
+
+/// Multi-pass count verification (pass 2).
+///
+/// Given the tiles and the unique card names detected in pass 1, asks the model
+/// to recount how many copies of each card it sees. Returns `(name, count)` pairs.
+pub async fn verify_counts(
+    cfg: &VisionConfig,
+    tiles: &[Tile],
+    unique_names: &[String],
+) -> Result<Vec<(String, u8)>> {
+    let client = build_client()?;
+
+    let pb = ProgressBar::new(tiles.len() as u64);
+    pb.set_style(
+        ProgressStyle::default_bar()
+            .template("{spinner:.cyan} [{bar:30}] {pos}/{len} tiles  {msg}")
+            .expect("valid template")
+            .progress_chars("█▓░"),
+    );
+
+    // Collect per-tile counts and merge
+    let mut merged: std::collections::HashMap<String, Vec<u8>> =
+        std::collections::HashMap::new();
+
+    for tile in tiles {
+        pb.set_message(format!("recount {}", tile.label));
+        let counts = recount_tile(cfg, &client, tile, unique_names).await?;
+        for (name, count) in &counts {
+            merged.entry(name.clone()).or_default().push(*count);
+        }
+        pb.inc(1);
+    }
+
+    pb.finish_with_message("recount done");
+
+    // For each card, take the maximum count reported across tiles
+    // (each tile may see only a subset of cards)
+    let result: Vec<(String, u8)> = merged
+        .into_iter()
+        .map(|(name, counts)| {
+            let max = counts.into_iter().max().unwrap_or(0);
+            (name, max)
+        })
+        .collect();
+
+    Ok(result)
+}
+
+// ── internals ───────────────────────────────────────────────────────
+
+fn build_client() -> Result<reqwest::Client> {
+    reqwest::Client::builder()
+        .timeout(std::time::Duration::from_secs(120))
+        .build()
+        .context("building HTTP client")
 }
 
 async fn extract_single_tile(
@@ -164,6 +217,13 @@ async fn extract_single_tile(
         .collect::<Vec<_>>()
         .join("\n");
 
+    // Log raw AI output for debugging
+    eprintln!("\n── Raw AI output ({}) ──", tile.label);
+    for line in text.lines() {
+        eprintln!("  {}", line);
+    }
+    eprintln!("── end ──\n");
+
     let names: Vec<String> = text
         .lines()
         .map(|l| l.trim().to_string())
@@ -171,4 +231,91 @@ async fn extract_single_tile(
         .collect();
 
     Ok(names)
+}
+
+async fn recount_tile(
+    cfg: &VisionConfig,
+    client: &reqwest::Client,
+    tile: &Tile,
+    unique_names: &[String],
+) -> Result<Vec<(String, u8)>> {
+    let card_list = unique_names.join("\n");
+
+    let prompt = format!(
+        "You are re-examining a photograph of Magic: The Gathering cards spread on a table.\n\n\
+         Here are the card names we detected in a first pass:\n{card_list}\n\n\
+         Now count how many PHYSICAL COPIES of each card you can see in THIS image.\n\
+         Output ONLY lines in the format:  COUNT CARD_NAME\n\
+         For example:\n  2 Lightning Bolt\n  1 Mountain\n\n\
+         If a card from the list is not visible in this specific image tile, omit it.\n\
+         Do NOT invent cards that are not in the list above."
+    );
+
+    let request = MessagesRequest {
+        model: cfg.model.clone(),
+        max_tokens: 4096,
+        messages: vec![Message {
+            role: "user".to_string(),
+            content: vec![
+                ContentBlock::Image {
+                    source: ImageSource {
+                        source_type: "base64".to_string(),
+                        media_type: "image/jpeg".to_string(),
+                        data: tile.base64_jpeg.clone(),
+                    },
+                },
+                ContentBlock::Text { text: prompt },
+            ],
+        }],
+    };
+
+    let resp = client
+        .post("https://api.anthropic.com/v1/messages")
+        .header("x-api-key", &cfg.api_key)
+        .header("anthropic-version", "2023-06-01")
+        .header("content-type", "application/json")
+        .json(&request)
+        .send()
+        .await
+        .context("sending recount request to Claude API")?;
+
+    if !resp.status().is_success() {
+        let status = resp.status();
+        let body = resp.text().await.unwrap_or_default();
+        bail!("Claude API recount error ({}): {}", status, body);
+    }
+
+    let body: MessagesResponse = resp.json().await.context("parsing Claude recount response")?;
+
+    let text = body
+        .content
+        .iter()
+        .filter_map(|b| b.text.as_deref())
+        .collect::<Vec<_>>()
+        .join("\n");
+
+    eprintln!("\n── Recount AI output ({}) ──", tile.label);
+    for line in text.lines() {
+        eprintln!("  {}", line);
+    }
+    eprintln!("── end recount ──\n");
+
+    let mut counts = Vec::new();
+    for line in text.lines() {
+        let line = line.trim();
+        if line.is_empty() {
+            continue;
+        }
+        // Parse "COUNT CARD_NAME"
+        if let Some((count_str, card_name)) = line.split_once(' ') {
+            if let Ok(count) = count_str.parse::<u8>() {
+                let card_name = card_name.trim().to_string();
+                if !card_name.is_empty() {
+                    counts.push((card_name, count));
+                }
+            }
+        }
+    }
+
+    Ok(counts)
 }
