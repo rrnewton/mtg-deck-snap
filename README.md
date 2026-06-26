@@ -12,12 +12,25 @@ You spread your cards on a table so all the **titles** are visible, snap a photo
 6. Walk you through ambiguous matches in an interactive wizard
 7. Output a `.dck` file ready to load into Forge or other MTG software
 
-## Build
+## Installation
+
+### Download release (Linux x86_64)
+
+```bash
+# Download latest release
+curl -L https://github.com/rrnewton/mtg-deck-snap/releases/latest/download/mtg-deck-snap-x86_64-unknown-linux-gnu.tar.gz | tar xz
+sudo mv mtg-deck-snap /usr/local/bin/
+```
+
+Or grab the tarball from the [Releases page](https://github.com/rrnewton/mtg-deck-snap/releases).
+
+### Build from source
 
 Requires Rust stable (tested on 1.87+).
 
 ```bash
 cargo build --release
+# binary at target/release/mtg-deck-snap
 ```
 
 ## Setup
@@ -171,6 +184,21 @@ The AI over-counted by 4 cards (stacked basic lands). With `--deck-size 40`, the
 - For large decks (60+), take 2–3 overlapping photos rather than one distant shot.
 - Tell the tool your expected deck size (`--deck-size`) for better validation and land adjustment.
 - Basic lands can have any count; everything else is capped at 4.
+
+## Backlog
+
+v0.1 — shipped June 2026
+- Photo → .dck pipeline with Claude vision + Scryfall fuzzy match
+- Set-coherence outlier detection
+- Interactive wizard, confidence table, validation
+
+Planned:
+- `--backend` flag — pluggable vision backends (local OCR via Tesseract, OpenAI, etc.)
+- OCR via Tesseract for offline / no-API-key mode
+- Sideboard detection and `[Sideboard]` output
+- Multi-image deck stitching with duplicate suppression
+- Collection mode — scan binders/boxes to CSV inventory
+- Price lookup via Scryfall / TCGplayer
 
 ## License
 
