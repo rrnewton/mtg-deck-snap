@@ -55,6 +55,20 @@ enum Commands {
         /// Run a second AI pass to re-count card copies and reconcile with pass 1.
         #[arg(long)]
         multi_pass: bool,
+
+        /// Vision backend to use for card-name extraction.
+        ///
+        /// `claude-cli` (default) shells out to the local `claude` CLI and needs
+        /// NO API key — it uses your Claude subscription. `gemini` and `codex`
+        /// likewise use their local CLIs / subscriptions. `anthropic-api` calls
+        /// the Anthropic HTTP API directly and requires `ANTHROPIC_API_KEY`.
+        #[arg(long, value_enum, default_value_t = vision::Backend::ClaudeCli)]
+        backend: vision::Backend,
+
+        /// Model override for the selected backend (backend-specific slug).
+        /// Omit to use the backend's default model.
+        #[arg(long)]
+        model: Option<String>,
     },
 
     /// Download / refresh the Scryfall card-name database.
@@ -86,6 +100,8 @@ async fn main() -> Result<()> {
             non_interactive,
             cardsfolder,
             multi_pass,
+            backend,
+            model,
         } => {
             cmd_scan(
                 images,
@@ -96,6 +112,8 @@ async fn main() -> Result<()> {
                 non_interactive,
                 cardsfolder,
                 multi_pass,
+                backend,
+                model,
             )
             .await
         }
@@ -116,6 +134,8 @@ async fn cmd_scan(
     non_interactive: bool,
     cardsfolder: Option<PathBuf>,
     multi_pass: bool,
+    backend: vision::Backend,
+    model: Option<String>,
 ) -> Result<()> {
     // 1. Load card database
     let db = if let Some(cf) = cardsfolder {
@@ -125,7 +145,10 @@ async fn cmd_scan(
     };
     eprintln!("Card database: {} names\n", db.len());
 
-    // 2. Get raw card names + collect tiles for potential pass 2
+    // 2. Get raw card names + collect tiles for potential pass 2.
+    //    The vision backend is only constructed when we actually have images to
+    //    analyse (so `--from-list` runs need neither a CLI nor an API key).
+    let mut vision_backend: Option<Box<dyn vision::VisionBackend>> = None;
     let (raw_names, tiles) = if let Some(list_path) = from_list {
         let content = std::fs::read_to_string(&list_path)
             .with_context(|| format!("reading list file {}", list_path.display()))?;
@@ -150,10 +173,11 @@ async fn cmd_scan(
         }
         eprintln!("{} tile(s) to analyse\n", all_tiles.len());
 
-        // AI vision pass 1 — extract card names
-        let vision_cfg = vision::VisionConfig::from_env()?;
-        let names =
-            vision::extract_card_names(&vision_cfg, &all_tiles, deck_size).await?;
+        // AI vision pass 1 — extract card names via the selected backend.
+        eprintln!("Vision backend: {}\n", backend.label());
+        let be = backend.build(model.clone())?;
+        let names = be.extract_card_names(&all_tiles, deck_size).await?;
+        vision_backend = Some(be);
         eprintln!("\nAI extracted {} raw card name(s)\n", names.len());
         (names, all_tiles)
     };
@@ -194,10 +218,7 @@ async fn cmd_scan(
         let outliers: Vec<_> = set_results.iter().filter(|r| r.is_outlier).collect();
 
         if !outliers.is_empty() {
-            let majority_set = outliers[0]
-                .majority_set
-                .as_deref()
-                .unwrap_or("unknown");
+            let majority_set = outliers[0].majority_set.as_deref().unwrap_or("unknown");
             eprintln!("\n── Set coherence check ─────────────────────────");
             eprintln!("  Majority set: {}", majority_set);
             for o in &outliers {
@@ -214,10 +235,7 @@ async fn cmd_scan(
                 // Downgrade confidence for outlier matches
                 if let Some(m) = matches.iter_mut().find(|m| m.canonical == o.card_name) {
                     if m.confidence != fuzzy_match::Confidence::Exact {
-                        eprintln!(
-                            "    Downgrading confidence: {} → low",
-                            m.confidence
-                        );
+                        eprintln!("    Downgrading confidence: {} → low", m.confidence);
                         m.confidence = fuzzy_match::Confidence::Low;
                     }
                 }
@@ -238,14 +256,13 @@ async fn cmd_scan(
     // 7. Multi-pass count verification
     if multi_pass && !tiles.is_empty() {
         eprintln!("\n── Pass 2: count verification ──\n");
-        let vision_cfg = vision::VisionConfig::from_env()?;
-        let unique_names: Vec<String> = deck
-            .main_deck
-            .iter()
-            .map(|e| e.card_name.clone())
-            .collect();
+        let be = vision_backend
+            .as_ref()
+            .expect("vision backend is built whenever tiles exist");
+        let unique_names: Vec<String> =
+            deck.main_deck.iter().map(|e| e.card_name.clone()).collect();
 
-        let recounts = vision::verify_counts(&vision_cfg, &tiles, &unique_names).await?;
+        let recounts = be.verify_counts(&tiles, &unique_names).await?;
 
         // Reconcile: compare pass-1 counts with pass-2 counts
         reconcile_counts(&mut deck, &recounts);
@@ -315,8 +332,7 @@ fn print_confidence_table(matches: &[fuzzy_match::MatchResult]) {
     );
 
     // Build unique entries preserving first-seen order
-    let mut printed: std::collections::HashSet<(String, String)> =
-        std::collections::HashSet::new();
+    let mut printed: std::collections::HashSet<(String, String)> = std::collections::HashSet::new();
     for m in matches {
         let key = (m.canonical.clone(), m.extracted.clone());
         if printed.contains(&key) {
@@ -330,7 +346,10 @@ fn print_confidence_table(matches: &[fuzzy_match::MatchResult]) {
             .count();
 
         let same = m.extracted == m.canonical
-            || m.extracted.trim_end_matches('?').trim().eq_ignore_ascii_case(&m.canonical);
+            || m.extracted
+                .trim_end_matches('?')
+                .trim()
+                .eq_ignore_ascii_case(&m.canonical);
         let extracted_display = if same {
             "=".to_string()
         } else {

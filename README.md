@@ -46,12 +46,31 @@ mtg-deck-snap update-db
 
 You can also point at a Forge `cardsfolder/` directory with `--cardsfolder <path>`.
 
-### API key
+### Vision backend
 
-The vision pipeline uses the Anthropic Claude API. Export your key:
+The vision pipeline is **pluggable** — pick how card-name extraction talks to a
+model with `--backend`:
+
+| `--backend`      | How it works                                        | API key? | Cost                |
+|------------------|-----------------------------------------------------|----------|---------------------|
+| `claude-cli`     | Shells out to the local `claude` CLI **(default)**  | No       | Uses your Claude subscription |
+| `gemini`         | Shells out to the local `gemini` CLI                | No       | Uses your Gemini subscription |
+| `codex`          | Shells out to the local `codex` CLI                 | No       | Uses your Codex subscription  |
+| `anthropic-api`  | Calls `api.anthropic.com` directly                  | Yes      | Per-call API billing          |
+
+The default, `claude-cli`, needs **no API key**: if you're signed in to a Claude
+Max/Pro subscription (`claude` on your PATH), extraction runs against your
+subscription with no per-call billing. The `gemini` and `codex` backends work
+the same way with their respective CLIs and subscriptions.
+
+Use `--model` to override the backend's default model (a backend-specific slug,
+e.g. `--backend gemini --model "gemini-2.5-flash"`).
+
+Only the `anthropic-api` backend needs a key:
 
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-...
+mtg-deck-snap scan photo.jpg --backend anthropic-api
 ```
 
 ## Usage
@@ -73,6 +92,11 @@ mtg-deck-snap scan photo.jpg --non-interactive --deck-size 40 -o deck.dck
 
 # Multi-pass: runs a second AI call to re-verify card counts
 mtg-deck-snap scan photo.jpg --multi-pass --deck-size 60 -o deck.dck
+
+# Pick a vision backend (default is claude-cli — no API key needed)
+mtg-deck-snap scan photo.jpg --backend claude-cli
+mtg-deck-snap scan photo.jpg --backend gemini --model "gemini-2.5-flash"
+mtg-deck-snap scan photo.jpg --backend anthropic-api   # needs ANTHROPIC_API_KEY
 ```
 
 ### Bypass AI vision with a text file
@@ -122,9 +146,9 @@ Name=My Deck
 
 ### AI vision
 
-Each tile is sent to the Claude API with a structured prompt that asks for card names (one per line, duplicates included for multiple copies). The **raw AI output** is printed to stderr for transparency and debugging.
+Each tile is sent to the selected vision backend (see [Vision backend](#vision-backend)) with a structured prompt that asks for card names (one per line, duplicates included for multiple copies). All backends share the same prompt and the same output parsing — `--backend` only changes *how* the image reaches a model. The **raw AI output** is printed to stderr for transparency and debugging.
 
-With `--multi-pass`, a second API call sends the same image along with the list of detected card names and asks the model to re-count how many copies of each card are visible. The conservative (lower) count wins.
+With `--multi-pass`, a second call sends the same image along with the list of detected card names and asks the model to re-count how many copies of each card are visible. The conservative (lower) count wins.
 
 ### Fuzzy matching
 
@@ -192,8 +216,12 @@ v0.1 — shipped June 2026
 - Set-coherence outlier detection
 - Interactive wizard, confidence table, validation
 
+v0.2
+- `--backend` flag — pluggable vision backends: `claude-cli` (default, no API
+  key), `gemini`, `codex`, and `anthropic-api`. The CLI backends run on a
+  Claude/Gemini/Codex subscription with no per-call billing.
+
 Planned:
-- `--backend` flag — pluggable vision backends (local OCR via Tesseract, OpenAI, etc.)
 - OCR via Tesseract for offline / no-API-key mode
 - Sideboard detection and `[Sideboard]` output
 - Multi-image deck stitching with duplicate suppression
