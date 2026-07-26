@@ -1,0 +1,471 @@
+{
+  "deck_name": "ryan_strix_constructed_RW",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/ryan_strix_constructed_RW",
+  "primary_image": "IMG_4182.jpeg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:51:47Z",
+  "timestamp_unix": 1785109907,
+  "deck_size_hint": 60,
+  "total_cards": 60,
+  "unique_cards": 36,
+  "raw_names": [
+    "Fields of Strife",
+    "Fields of Strife",
+    "Fields of Strife",
+    "Potioner's Trove",
+    "Choreographed Sparks",
+    "Living History",
+    "Restoration Seminar",
+    "Lorehold Charm",
+    "Wilt in the Heat",
+    "Wilt in the Heat",
+    "Ajani's Response",
+    "Rapier Wit",
+    "Heated Argument",
+    "Artistic Process",
+    "Burst Lightning",
+    "Rapier Wit",
+    "Ascendant Dustspeaker",
+    "Summoned Dromedary",
+    "Stirring Hopesinger",
+    "Stirring Hopesinger",
+    "Primary Research",
+    "Practiced Offense",
+    "Emeritus of Truce",
+    "Quill-Blade Laureate",
+    "Hardened Academic",
+    "Requisition Raid",
+    "Charging Strifeknight",
+    "Blazing Firesinger",
+    "Stone Docent",
+    "Elite Interceptor",
+    "Garrison Excavator",
+    "Pigment Wrangler",
+    "Rubble Rouser",
+    "Rubble Rouser",
+    "Thunderdrum Soloist",
+    "The Dawning Archaic",
+    "Molten Note",
+    "Molten Note",
+    "Repel Calamity",
+    "Stand Up for Yourself",
+    "Tablet of Discovery",
+    "Mountain",
+    "Mountain",
+    "Mountain",
+    "Mountain",
+    "Mountain",
+    "Mountain",
+    "Mountain",
+    "Mountain",
+    "Plains",
+    "Plains",
+    "Plains",
+    "Plains",
+    "Plains",
+    "Plains",
+    "Plains",
+    "Plains",
+    "Plains",
+    "Plains",
+    "Plains"
+  ],
+  "matches": [
+    {
+      "extracted": "Fields of Strife",
+      "canonical": "Fields of Strife",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Potioner's Trove",
+      "canonical": "Potioner's Trove",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Choreographed Sparks",
+      "canonical": "Choreographed Sparks",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Living History",
+      "canonical": "Living History",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Restoration Seminar",
+      "canonical": "Restoration Seminar",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Lorehold Charm",
+      "canonical": "Lorehold Charm",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Wilt in the Heat",
+      "canonical": "Wilt in the Heat",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ajani's Response",
+      "canonical": "Ajani's Response",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Rapier Wit",
+      "canonical": "Rapier Wit",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Heated Argument",
+      "canonical": "Heated Argument",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Artistic Process",
+      "canonical": "Artistic Process",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Burst Lightning",
+      "canonical": "Burst Lightning",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ascendant Dustspeaker",
+      "canonical": "Ascendant Dustspeaker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Summoned Dromedary",
+      "canonical": "Summoned Dromedary",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Stirring Hopesinger",
+      "canonical": "Stirring Hopesinger",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Primary Research",
+      "canonical": "Primary Research",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Practiced Offense",
+      "canonical": "Practiced Offense",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Emeritus of Truce",
+      "canonical": "Emeritus of Truce // Swords to Plowshares",
+      "score": 0.76,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Quill-Blade Laureate",
+      "canonical": "Quill-Blade Laureate // Twofold Intent",
+      "score": 0.782,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Hardened Academic",
+      "canonical": "Hardened Academic",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Requisition Raid",
+      "canonical": "Requisition Raid",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Charging Strifeknight",
+      "canonical": "Charging Strifeknight",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Blazing Firesinger",
+      "canonical": "Goblin Fireslinger",
+      "score": 0.836,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Stone Docent",
+      "canonical": "Stone Docent",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Elite Interceptor",
+      "canonical": "Elite Instructor",
+      "score": 0.892,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Garrison Excavator",
+      "canonical": "Garrison Excavator",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Pigment Wrangler",
+      "canonical": "Pigment Wrangler // Striking Palette",
+      "score": 0.764,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Rubble Rouser",
+      "canonical": "Rubble Rouser",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Thunderdrum Soloist",
+      "canonical": "Thunderdrum Soloist",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "The Dawning Archaic",
+      "canonical": "The Dawning Archaic",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Molten Note",
+      "canonical": "Molten Note",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Repel Calamity",
+      "canonical": "Repel Calamity",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Stand Up for Yourself",
+      "canonical": "Stand Up for Yourself",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Tablet of Discovery",
+      "canonical": "Tablet of Discovery",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Mountain",
+      "canonical": "Mountain",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Plains",
+      "canonical": "Plains",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Plains",
+      "count": 11
+    },
+    {
+      "card_name": "Mountain",
+      "count": 8
+    },
+    {
+      "card_name": "Fields of Strife",
+      "count": 3
+    },
+    {
+      "card_name": "Molten Note",
+      "count": 2
+    },
+    {
+      "card_name": "Rapier Wit",
+      "count": 2
+    },
+    {
+      "card_name": "Rubble Rouser",
+      "count": 2
+    },
+    {
+      "card_name": "Stirring Hopesinger",
+      "count": 2
+    },
+    {
+      "card_name": "Wilt in the Heat",
+      "count": 2
+    },
+    {
+      "card_name": "Ajani's Response",
+      "count": 1
+    },
+    {
+      "card_name": "Artistic Process",
+      "count": 1
+    },
+    {
+      "card_name": "Ascendant Dustspeaker",
+      "count": 1
+    },
+    {
+      "card_name": "Burst Lightning",
+      "count": 1
+    },
+    {
+      "card_name": "Charging Strifeknight",
+      "count": 1
+    },
+    {
+      "card_name": "Choreographed Sparks",
+      "count": 1
+    },
+    {
+      "card_name": "Elite Instructor",
+      "count": 1
+    },
+    {
+      "card_name": "Emeritus of Truce // Swords to Plowshares",
+      "count": 1
+    },
+    {
+      "card_name": "Garrison Excavator",
+      "count": 1
+    },
+    {
+      "card_name": "Goblin Fireslinger",
+      "count": 1
+    },
+    {
+      "card_name": "Hardened Academic",
+      "count": 1
+    },
+    {
+      "card_name": "Heated Argument",
+      "count": 1
+    },
+    {
+      "card_name": "Living History",
+      "count": 1
+    },
+    {
+      "card_name": "Lorehold Charm",
+      "count": 1
+    },
+    {
+      "card_name": "Pigment Wrangler // Striking Palette",
+      "count": 1
+    },
+    {
+      "card_name": "Potioner's Trove",
+      "count": 1
+    },
+    {
+      "card_name": "Practiced Offense",
+      "count": 1
+    },
+    {
+      "card_name": "Primary Research",
+      "count": 1
+    },
+    {
+      "card_name": "Quill-Blade Laureate // Twofold Intent",
+      "count": 1
+    },
+    {
+      "card_name": "Repel Calamity",
+      "count": 1
+    },
+    {
+      "card_name": "Requisition Raid",
+      "count": 1
+    },
+    {
+      "card_name": "Restoration Seminar",
+      "count": 1
+    },
+    {
+      "card_name": "Stand Up for Yourself",
+      "count": 1
+    },
+    {
+      "card_name": "Stone Docent",
+      "count": 1
+    },
+    {
+      "card_name": "Summoned Dromedary",
+      "count": 1
+    },
+    {
+      "card_name": "Tablet of Discovery",
+      "count": 1
+    },
+    {
+      "card_name": "The Dawning Archaic",
+      "count": 1
+    },
+    {
+      "card_name": "Thunderdrum Soloist",
+      "count": 1
+    }
+  ],
+  "validation": [],
+  "low_confidence_cards": [
+    {
+      "extracted": "Emeritus of Truce",
+      "canonical": "Emeritus of Truce // Swords to Plowshares",
+      "score": 0.76,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Quill-Blade Laureate",
+      "canonical": "Quill-Blade Laureate // Twofold Intent",
+      "score": 0.782,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Blazing Firesinger",
+      "canonical": "Goblin Fireslinger",
+      "score": 0.836,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Elite Interceptor",
+      "canonical": "Elite Instructor",
+      "score": 0.892,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Pigment Wrangler",
+      "canonical": "Pigment Wrangler // Striking Palette",
+      "score": 0.764,
+      "confidence": "medium"
+    }
+  ]
+}

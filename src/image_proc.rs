@@ -35,8 +35,8 @@ const MAX_IMAGE_DIM: u32 = 4096;
 
 /// Load an image from disk and split it into tiles suitable for AI vision.
 pub fn load_and_tile(path: &Path) -> Result<Vec<Tile>> {
-    let img = image::open(path)
-        .with_context(|| format!("failed to open image {}", path.display()))?;
+    let img =
+        image::open(path).with_context(|| format!("failed to open image {}", path.display()))?;
     let (orig_w, orig_h) = img.dimensions();
     eprintln!(
         "Loaded image {} ({}×{})",
@@ -92,7 +92,10 @@ pub fn load_and_tile(path: &Path) -> Result<Vec<Tile>> {
             idx += 1;
             tiles.push(Tile {
                 base64_jpeg: b64,
-                label: format!("tile {}/{} (x={}, y={}, {}×{})", idx, total, x0, y0, tile_w, tile_h),
+                label: format!(
+                    "tile {}/{} (x={}, y={}, {}×{})",
+                    idx, total, x0, y0, tile_w, tile_h
+                ),
                 width: tile_w,
                 height: tile_h,
             });
@@ -107,8 +110,6 @@ fn encode_jpeg(img: &image::DynamicImage) -> Result<String> {
     let rgb = img.to_rgb8();
     let mut buf: Vec<u8> = Vec::new();
     let mut encoder = image::codecs::jpeg::JpegEncoder::new_with_quality(&mut buf, 92);
-    encoder
-        .encode_image(&rgb)
-        .context("JPEG encoding failed")?;
+    encoder.encode_image(&rgb).context("JPEG encoding failed")?;
     Ok(base64::engine::general_purpose::STANDARD.encode(&buf))
 }

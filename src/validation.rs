@@ -94,7 +94,10 @@ pub fn validate(entries: &[DeckEntry], expected_size: Option<u32>) -> Vec<Warnin
     if total < 30 {
         warnings.push(Warning {
             severity: Severity::Warn,
-            message: format!("Only {} total cards detected — possible missed cards", total),
+            message: format!(
+                "Only {} total cards detected — possible missed cards",
+                total
+            ),
         });
     }
     if total > 120 {

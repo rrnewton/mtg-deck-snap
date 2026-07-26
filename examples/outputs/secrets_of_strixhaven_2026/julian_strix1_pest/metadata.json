@@ -1,0 +1,211 @@
+{
+  "deck_name": "julian_strix1_pest",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/julian_strix1_pest",
+  "primary_image": "IMG_4158.jpeg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:47:12Z",
+  "timestamp_unix": 1785109632,
+  "deck_size_hint": 40,
+  "total_cards": 39,
+  "unique_cards": 14,
+  "raw_names": [
+    "Swamp",
+    "Forest",
+    "Noxious Newt",
+    "Grapple with Death",
+    "Swamp",
+    "Giant Growth",
+    "Forum Necroscribe",
+    "Pest Mascot",
+    "Forest",
+    "Forest",
+    "Forest",
+    "Forest",
+    "Bogwater Lumaret",
+    "Swamp",
+    "Melancholic Poet",
+    "Swamp",
+    "Pest Mascot",
+    "Blech, Loafing Pest",
+    "Bogwater Lumaret",
+    "Noxious Newt",
+    "Scheming Silvertongue",
+    "Old-Growth Educator",
+    "Swamp",
+    "Swamp",
+    "Root Manipulation",
+    "Forest",
+    "Forest",
+    "Swamp",
+    "Additive Evolution",
+    "Melancholic Poet",
+    "Giant Growth",
+    "Additive Evolution",
+    "Grapple with Death",
+    "Root Manipulation",
+    "Pest Mascot",
+    "Swamp",
+    "Pest Mascot",
+    "Melancholic Poet",
+    "Forest"
+  ],
+  "matches": [
+    {
+      "extracted": "Swamp",
+      "canonical": "Swamp",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Forest",
+      "canonical": "Forest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Noxious Newt",
+      "canonical": "Noxious Newt",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Grapple with Death",
+      "canonical": "Grapple with Death",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Giant Growth",
+      "canonical": "Giant Growth",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Forum Necroscribe",
+      "canonical": "Forum Necroscribe",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Pest Mascot",
+      "canonical": "Pest Mascot",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Bogwater Lumaret",
+      "canonical": "Bogwater Lumaret",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Melancholic Poet",
+      "canonical": "Melancholic Poet",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Blech, Loafing Pest",
+      "canonical": "Blech, Loafing Pest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Scheming Silvertongue",
+      "canonical": "Scheming Aspirant",
+      "score": 0.793,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Old-Growth Educator",
+      "canonical": "Old-Growth Educator",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Root Manipulation",
+      "canonical": "Root Manipulation",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Additive Evolution",
+      "canonical": "Additive Evolution",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Forest",
+      "count": 8
+    },
+    {
+      "card_name": "Swamp",
+      "count": 8
+    },
+    {
+      "card_name": "Pest Mascot",
+      "count": 4
+    },
+    {
+      "card_name": "Melancholic Poet",
+      "count": 3
+    },
+    {
+      "card_name": "Additive Evolution",
+      "count": 2
+    },
+    {
+      "card_name": "Bogwater Lumaret",
+      "count": 2
+    },
+    {
+      "card_name": "Giant Growth",
+      "count": 2
+    },
+    {
+      "card_name": "Grapple with Death",
+      "count": 2
+    },
+    {
+      "card_name": "Noxious Newt",
+      "count": 2
+    },
+    {
+      "card_name": "Root Manipulation",
+      "count": 2
+    },
+    {
+      "card_name": "Blech, Loafing Pest",
+      "count": 1
+    },
+    {
+      "card_name": "Forum Necroscribe",
+      "count": 1
+    },
+    {
+      "card_name": "Old-Growth Educator",
+      "count": 1
+    },
+    {
+      "card_name": "Scheming Aspirant",
+      "count": 1
+    }
+  ],
+  "validation": [
+    {
+      "severity": "WARN",
+      "message": "Deck has 39 cards but expected 40 (difference: -1)"
+    }
+  ],
+  "low_confidence_cards": [
+    {
+      "extracted": "Scheming Silvertongue",
+      "canonical": "Scheming Aspirant",
+      "score": 0.793,
+      "confidence": "low"
+    }
+  ]
+}

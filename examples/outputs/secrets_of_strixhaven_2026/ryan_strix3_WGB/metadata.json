@@ -1,0 +1,327 @@
+{
+  "deck_name": "ryan_strix3_WGB",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/ryan_strix3_WGB",
+  "primary_image": "13650_WGB.jpg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:48:45Z",
+  "timestamp_unix": 1785109725,
+  "deck_size_hint": 40,
+  "total_cards": 40,
+  "unique_cards": 26,
+  "raw_names": [
+    "Plains",
+    "Burrog Barrage",
+    "Plains",
+    "Thornfist Striker",
+    "Terramorphic Expanse",
+    "Forum Necroscribe",
+    "Imperious Inkmage",
+    "Scolding Administrator",
+    "Scolding Administrator",
+    "Plains",
+    "Wild Hypothesis",
+    "Owlin Historian",
+    "Forest",
+    "Rapier Wit",
+    "Ambitious Augmenter",
+    "Graduation Day",
+    "Planar Engineering",
+    "Rapier Wit",
+    "Shopkeeper's Bane",
+    "Forest",
+    "Silverquill Charm",
+    "Forum of Amity",
+    "Killian's Confidence",
+    "Swamp",
+    "Swamp",
+    "Conciliator's Duelist",
+    "Swamp",
+    "Elite Interceptor",
+    "Stirring Hopesinger",
+    "Plains",
+    "Stand Up for Yourself",
+    "Ajani's Response",
+    "Inkshape Demonstrator",
+    "Forest",
+    "Plains",
+    "Terramorphic Expanse",
+    "Mindful Biomancer",
+    "Forum of Amity",
+    "Forest",
+    "Swamp"
+  ],
+  "matches": [
+    {
+      "extracted": "Plains",
+      "canonical": "Plains",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Burrog Barrage",
+      "canonical": "Burrog Barrage",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Thornfist Striker",
+      "canonical": "Thornfist Striker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Terramorphic Expanse",
+      "canonical": "Terramorphic Expanse",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Forum Necroscribe",
+      "canonical": "Forum Necroscribe",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Imperious Inkmage",
+      "canonical": "Imperious Inkmage",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Scolding Administrator",
+      "canonical": "Scolding Administrator",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Wild Hypothesis",
+      "canonical": "Wild Hypothesis",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Owlin Historian",
+      "canonical": "Owlin Historian",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Forest",
+      "canonical": "Forest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Rapier Wit",
+      "canonical": "Rapier Wit",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ambitious Augmenter",
+      "canonical": "Ambitious Augmenter",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Graduation Day",
+      "canonical": "Graduation Day",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Planar Engineering",
+      "canonical": "Planar Engineering",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Shopkeeper's Bane",
+      "canonical": "Shopkeeper's Bane",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Silverquill Charm",
+      "canonical": "Silverquill Charm",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Forum of Amity",
+      "canonical": "Forum of Amity",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Killian's Confidence",
+      "canonical": "Killian's Confidence",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Swamp",
+      "canonical": "Swamp",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Conciliator's Duelist",
+      "canonical": "Conciliator's Duelist",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Elite Interceptor",
+      "canonical": "Elite Instructor",
+      "score": 0.892,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Stirring Hopesinger",
+      "canonical": "Stirring Hopesinger",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Stand Up for Yourself",
+      "canonical": "Stand Up for Yourself",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ajani's Response",
+      "canonical": "Ajani's Response",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Inkshape Demonstrator",
+      "canonical": "Inkshape Demonstrator",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Mindful Biomancer",
+      "canonical": "Mindful Biomancer",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Plains",
+      "count": 5
+    },
+    {
+      "card_name": "Forest",
+      "count": 4
+    },
+    {
+      "card_name": "Swamp",
+      "count": 4
+    },
+    {
+      "card_name": "Forum of Amity",
+      "count": 2
+    },
+    {
+      "card_name": "Rapier Wit",
+      "count": 2
+    },
+    {
+      "card_name": "Scolding Administrator",
+      "count": 2
+    },
+    {
+      "card_name": "Terramorphic Expanse",
+      "count": 2
+    },
+    {
+      "card_name": "Ajani's Response",
+      "count": 1
+    },
+    {
+      "card_name": "Ambitious Augmenter",
+      "count": 1
+    },
+    {
+      "card_name": "Burrog Barrage",
+      "count": 1
+    },
+    {
+      "card_name": "Conciliator's Duelist",
+      "count": 1
+    },
+    {
+      "card_name": "Elite Instructor",
+      "count": 1
+    },
+    {
+      "card_name": "Forum Necroscribe",
+      "count": 1
+    },
+    {
+      "card_name": "Graduation Day",
+      "count": 1
+    },
+    {
+      "card_name": "Imperious Inkmage",
+      "count": 1
+    },
+    {
+      "card_name": "Inkshape Demonstrator",
+      "count": 1
+    },
+    {
+      "card_name": "Killian's Confidence",
+      "count": 1
+    },
+    {
+      "card_name": "Mindful Biomancer",
+      "count": 1
+    },
+    {
+      "card_name": "Owlin Historian",
+      "count": 1
+    },
+    {
+      "card_name": "Planar Engineering",
+      "count": 1
+    },
+    {
+      "card_name": "Shopkeeper's Bane",
+      "count": 1
+    },
+    {
+      "card_name": "Silverquill Charm",
+      "count": 1
+    },
+    {
+      "card_name": "Stand Up for Yourself",
+      "count": 1
+    },
+    {
+      "card_name": "Stirring Hopesinger",
+      "count": 1
+    },
+    {
+      "card_name": "Thornfist Striker",
+      "count": 1
+    },
+    {
+      "card_name": "Wild Hypothesis",
+      "count": 1
+    }
+  ],
+  "validation": [],
+  "low_confidence_cards": [
+    {
+      "extracted": "Elite Interceptor",
+      "canonical": "Elite Instructor",
+      "score": 0.892,
+      "confidence": "low"
+    }
+  ]
+}

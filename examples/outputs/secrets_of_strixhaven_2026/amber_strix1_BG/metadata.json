@@ -1,0 +1,303 @@
+{
+  "deck_name": "amber_strix1_BG",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/amber_strix1_BG",
+  "primary_image": "IMG_4171.jpeg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:46:06Z",
+  "timestamp_unix": 1785109566,
+  "deck_size_hint": 40,
+  "total_cards": 40,
+  "unique_cards": 23,
+  "raw_names": [
+    "Swamp",
+    "Swamp",
+    "Swamp",
+    "Swamp",
+    "Noxious Newt",
+    "Mindful Biomancer",
+    "Swamp",
+    "Swamp",
+    "Pest Mascot",
+    "Teacher's Pest",
+    "Forest",
+    "Send in the Pest",
+    "Forest",
+    "Grapple with Death",
+    "Forest",
+    "Pull from the Grave",
+    "Grapple with Death",
+    "Burrog Barrage",
+    "Swamp",
+    "Adventurous Eater",
+    "Forest",
+    "Topiary Lecturer",
+    "Swamp",
+    "Oracle's Restoration",
+    "Masterful Flourish",
+    "Forest",
+    "Bogwater Lumaret",
+    "Forest",
+    "Forest",
+    "Cheerful Osteomancer",
+    "Burrog Banemaker",
+    "Forest",
+    "Shopkeeper's Bane",
+    "Chelonian Tackle",
+    "Mage Tower Referee",
+    "Essenceknit Scholar",
+    "Eternal Student",
+    "Bogwater Lumaret",
+    "Sneering Shadewriter",
+    "Swamp"
+  ],
+  "matches": [
+    {
+      "extracted": "Swamp",
+      "canonical": "Swamp",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Noxious Newt",
+      "canonical": "Noxious Newt",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Mindful Biomancer",
+      "canonical": "Mindful Biomancer",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Pest Mascot",
+      "canonical": "Pest Mascot",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Teacher's Pest",
+      "canonical": "Teacher's Pest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Forest",
+      "canonical": "Forest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Send in the Pest",
+      "canonical": "Send in the Pest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Grapple with Death",
+      "canonical": "Grapple with Death",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Pull from the Grave",
+      "canonical": "Pull from the Grave",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Burrog Barrage",
+      "canonical": "Burrog Barrage",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Adventurous Eater",
+      "canonical": "Adventuring Gear",
+      "score": 0.829,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Topiary Lecturer",
+      "canonical": "Topiary Lecturer",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Oracle's Restoration",
+      "canonical": "Oracle's Restoration",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Masterful Flourish",
+      "canonical": "Masterful Flourish",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Bogwater Lumaret",
+      "canonical": "Bogwater Lumaret",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Cheerful Osteomancer",
+      "canonical": "Cheerful Osteomancer // Raise Dead",
+      "score": 0.804,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Burrog Banemaker",
+      "canonical": "Burrog Banemaker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Shopkeeper's Bane",
+      "canonical": "Shopkeeper's Bane",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Chelonian Tackle",
+      "canonical": "Chelonian Tackle",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Mage Tower Referee",
+      "canonical": "Mage Tower Referee",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Essenceknit Scholar",
+      "canonical": "Essenceknit Scholar",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Eternal Student",
+      "canonical": "Eternal Student",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Sneering Shadewriter",
+      "canonical": "Sneering Shadewriter",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Swamp",
+      "count": 9
+    },
+    {
+      "card_name": "Forest",
+      "count": 8
+    },
+    {
+      "card_name": "Bogwater Lumaret",
+      "count": 2
+    },
+    {
+      "card_name": "Grapple with Death",
+      "count": 2
+    },
+    {
+      "card_name": "Adventuring Gear",
+      "count": 1
+    },
+    {
+      "card_name": "Burrog Banemaker",
+      "count": 1
+    },
+    {
+      "card_name": "Burrog Barrage",
+      "count": 1
+    },
+    {
+      "card_name": "Cheerful Osteomancer // Raise Dead",
+      "count": 1
+    },
+    {
+      "card_name": "Chelonian Tackle",
+      "count": 1
+    },
+    {
+      "card_name": "Essenceknit Scholar",
+      "count": 1
+    },
+    {
+      "card_name": "Eternal Student",
+      "count": 1
+    },
+    {
+      "card_name": "Mage Tower Referee",
+      "count": 1
+    },
+    {
+      "card_name": "Masterful Flourish",
+      "count": 1
+    },
+    {
+      "card_name": "Mindful Biomancer",
+      "count": 1
+    },
+    {
+      "card_name": "Noxious Newt",
+      "count": 1
+    },
+    {
+      "card_name": "Oracle's Restoration",
+      "count": 1
+    },
+    {
+      "card_name": "Pest Mascot",
+      "count": 1
+    },
+    {
+      "card_name": "Pull from the Grave",
+      "count": 1
+    },
+    {
+      "card_name": "Send in the Pest",
+      "count": 1
+    },
+    {
+      "card_name": "Shopkeeper's Bane",
+      "count": 1
+    },
+    {
+      "card_name": "Sneering Shadewriter",
+      "count": 1
+    },
+    {
+      "card_name": "Teacher's Pest",
+      "count": 1
+    },
+    {
+      "card_name": "Topiary Lecturer",
+      "count": 1
+    }
+  ],
+  "validation": [],
+  "low_confidence_cards": [
+    {
+      "extracted": "Adventurous Eater",
+      "canonical": "Adventuring Gear",
+      "score": 0.829,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Cheerful Osteomancer",
+      "canonical": "Cheerful Osteomancer // Raise Dead",
+      "score": 0.804,
+      "confidence": "medium"
+    }
+  ]
+}

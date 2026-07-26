@@ -5,7 +5,6 @@ on:
     branches: [main]
     tags: ['v*']
   pull_request:
-    branches: [main]
 
 env:
   CARGO_TERM_COLOR: always
@@ -16,11 +15,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
       - uses: Swatinem/rust-cache@v2
+      - name: Format
+        run: cargo fmt --all --check
+      - name: Build
+        run: cargo build --release
+      # Unit tests only — no network / API keys required in CI.
       - name: Test
-        run: cargo test
+        run: cargo test --release
       - name: Clippy
-        run: cargo clippy -- -D warnings
+        run: cargo clippy --release --all-targets -- -D warnings
 
   release:
     if: startsWith(github.ref, 'refs/tags/v')

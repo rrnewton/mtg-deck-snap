@@ -53,8 +53,8 @@ impl CardDatabase {
         let cache_path = Self::cache_path()?;
 
         if !force_refresh && cache_path.exists() {
-            let data = std::fs::read_to_string(&cache_path)
-                .context("reading cached Scryfall names")?;
+            let data =
+                std::fs::read_to_string(&cache_path).context("reading cached Scryfall names")?;
             let names: Vec<String> =
                 serde_json::from_str(&data).context("parsing cached Scryfall names")?;
             eprintln!("Loaded {} card names from cache", names.len());
@@ -128,7 +128,11 @@ impl CardDatabase {
         }
         let json = serde_json::to_string(&names)?;
         std::fs::write(&cache_path, json)?;
-        eprintln!("Cached {} unique card names to {}", names.len(), cache_path.display());
+        eprintln!(
+            "Cached {} unique card names to {}",
+            names.len(),
+            cache_path.display()
+        );
 
         // Also build and cache set index
         let mut set_entries = Vec::with_capacity(cards.len() * 2);
@@ -171,10 +175,8 @@ impl CardDatabase {
     pub fn load_set_index() -> Result<SetIndex> {
         let path = Self::set_cache_path()?;
         if path.exists() {
-            let data = std::fs::read_to_string(&path)
-                .context("reading cached set index")?;
-            let idx: SetIndex =
-                serde_json::from_str(&data).context("parsing cached set index")?;
+            let data = std::fs::read_to_string(&path).context("reading cached set index")?;
+            let idx: SetIndex = serde_json::from_str(&data).context("parsing cached set index")?;
             Ok(idx)
         } else {
             // Return empty index if not cached yet
@@ -194,7 +196,11 @@ impl CardDatabase {
         Self::walk_cardsfolder(cardsfolder, &mut names)?;
         names.sort();
         names.dedup();
-        eprintln!("Loaded {} card names from {}", names.len(), cardsfolder.display());
+        eprintln!(
+            "Loaded {} card names from {}",
+            names.len(),
+            cardsfolder.display()
+        );
         Ok(Self::from_names(names))
     }
 
@@ -204,12 +210,7 @@ impl CardDatabase {
             let ft = entry.file_type()?;
             if ft.is_dir() {
                 Self::walk_cardsfolder(&entry.path(), out)?;
-            } else if ft.is_file()
-                && entry
-                    .path()
-                    .extension()
-                    .is_some_and(|e| e == "txt")
-            {
+            } else if ft.is_file() && entry.path().extension().is_some_and(|e| e == "txt") {
                 if let Ok(content) = std::fs::read_to_string(entry.path()) {
                     for line in content.lines() {
                         if let Some(name) = line.strip_prefix("Name=") {

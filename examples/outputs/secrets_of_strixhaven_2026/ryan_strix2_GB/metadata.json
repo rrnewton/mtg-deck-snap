@@ -1,0 +1,339 @@
+{
+  "deck_name": "ryan_strix2_GB",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/ryan_strix2_GB",
+  "primary_image": "IMG_4178.jpeg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:48:26Z",
+  "timestamp_unix": 1785109706,
+  "deck_size_hint": 40,
+  "total_cards": 40,
+  "unique_cards": 26,
+  "raw_names": [
+    "Chelonian Tackle",
+    "Studious First-Year",
+    "Forest",
+    "Paradox Surveyor",
+    "Island",
+    "Island",
+    "Forest",
+    "Forest",
+    "Island",
+    "Royal Treatment",
+    "Follow the Lumarets",
+    "Forest",
+    "Island",
+    "Fractal Mascot",
+    "Island",
+    "Island",
+    "Strixhaven Skycoach",
+    "Forest",
+    "Flow State",
+    "Fractal Tender",
+    "Mage Tower Referee",
+    "Infirmary Healer",
+    "Island",
+    "Essence Scatter",
+    "Procrastinate",
+    "Forest",
+    "Matterbending Mage",
+    "Potioner's Trove",
+    "Tenured Concocter",
+    "Forest",
+    "Fractalize",
+    "Stormcarved Coast",
+    "Berta, Wise Extrapolator",
+    "Landscape Painter",
+    "Quandrix Charm",
+    "Sleight of Hand",
+    "Island",
+    "Embrace the Paradox",
+    "Rancorous Archaic",
+    "Forest"
+  ],
+  "matches": [
+    {
+      "extracted": "Chelonian Tackle",
+      "canonical": "Chelonian Tackle",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Studious First-Year",
+      "canonical": "Studious First-Year // Rampant Growth",
+      "score": 0.777,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Forest",
+      "canonical": "Forest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Paradox Surveyor",
+      "canonical": "Paradox Surveyor",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Island",
+      "canonical": "Island",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Royal Treatment",
+      "canonical": "Royal Treatment",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Follow the Lumarets",
+      "canonical": "Follow the Lumarets",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Fractal Mascot",
+      "canonical": "Fractal Mascot",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Strixhaven Skycoach",
+      "canonical": "Strixhaven Skycoach",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Flow State",
+      "canonical": "Flow State",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Fractal Tender",
+      "canonical": "Fractal Tender",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Mage Tower Referee",
+      "canonical": "Mage Tower Referee",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Infirmary Healer",
+      "canonical": "Information Dealer",
+      "score": 0.817,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Essence Scatter",
+      "canonical": "Essence Scatter",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Procrastinate",
+      "canonical": "Procrastinate",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Matterbending Mage",
+      "canonical": "Matterbending Mage",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Potioner's Trove",
+      "canonical": "Potioner's Trove",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Tenured Concocter",
+      "canonical": "Tenured Concocter",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Fractalize",
+      "canonical": "Fractalize",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Stormcarved Coast",
+      "canonical": "Stormcarved Coast",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Berta, Wise Extrapolator",
+      "canonical": "Berta, Wise Extrapolator",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Landscape Painter",
+      "canonical": "Landscape Painter // Vibrant Idea",
+      "score": 0.78,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Quandrix Charm",
+      "canonical": "Quandrix Charm",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Sleight of Hand",
+      "canonical": "Sleight of Hand",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Embrace the Paradox",
+      "canonical": "Embrace the Paradox",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Rancorous Archaic",
+      "canonical": "Rancorous Archaic",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Forest",
+      "count": 8
+    },
+    {
+      "card_name": "Island",
+      "count": 8
+    },
+    {
+      "card_name": "Berta, Wise Extrapolator",
+      "count": 1
+    },
+    {
+      "card_name": "Chelonian Tackle",
+      "count": 1
+    },
+    {
+      "card_name": "Embrace the Paradox",
+      "count": 1
+    },
+    {
+      "card_name": "Essence Scatter",
+      "count": 1
+    },
+    {
+      "card_name": "Flow State",
+      "count": 1
+    },
+    {
+      "card_name": "Follow the Lumarets",
+      "count": 1
+    },
+    {
+      "card_name": "Fractal Mascot",
+      "count": 1
+    },
+    {
+      "card_name": "Fractal Tender",
+      "count": 1
+    },
+    {
+      "card_name": "Fractalize",
+      "count": 1
+    },
+    {
+      "card_name": "Information Dealer",
+      "count": 1
+    },
+    {
+      "card_name": "Landscape Painter // Vibrant Idea",
+      "count": 1
+    },
+    {
+      "card_name": "Mage Tower Referee",
+      "count": 1
+    },
+    {
+      "card_name": "Matterbending Mage",
+      "count": 1
+    },
+    {
+      "card_name": "Paradox Surveyor",
+      "count": 1
+    },
+    {
+      "card_name": "Potioner's Trove",
+      "count": 1
+    },
+    {
+      "card_name": "Procrastinate",
+      "count": 1
+    },
+    {
+      "card_name": "Quandrix Charm",
+      "count": 1
+    },
+    {
+      "card_name": "Rancorous Archaic",
+      "count": 1
+    },
+    {
+      "card_name": "Royal Treatment",
+      "count": 1
+    },
+    {
+      "card_name": "Sleight of Hand",
+      "count": 1
+    },
+    {
+      "card_name": "Stormcarved Coast",
+      "count": 1
+    },
+    {
+      "card_name": "Strixhaven Skycoach",
+      "count": 1
+    },
+    {
+      "card_name": "Studious First-Year // Rampant Growth",
+      "count": 1
+    },
+    {
+      "card_name": "Tenured Concocter",
+      "count": 1
+    }
+  ],
+  "validation": [],
+  "low_confidence_cards": [
+    {
+      "extracted": "Studious First-Year",
+      "canonical": "Studious First-Year // Rampant Growth",
+      "score": 0.777,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Infirmary Healer",
+      "canonical": "Information Dealer",
+      "score": 0.817,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Landscape Painter",
+      "canonical": "Landscape Painter // Vibrant Idea",
+      "score": 0.78,
+      "confidence": "medium"
+    }
+  ]
+}
