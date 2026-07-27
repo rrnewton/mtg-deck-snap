@@ -1,0 +1,363 @@
+{
+  "deck_name": "amber_strix3_UGB",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/amber_strix3_UGB",
+  "primary_image": "13648_UGB.jpg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:46:53Z",
+  "timestamp_unix": 1785109613,
+  "deck_size_hint": 40,
+  "total_cards": 39,
+  "unique_cards": 28,
+  "raw_names": [
+    "Swamp",
+    "Swamp",
+    "Island",
+    "Island",
+    "Forest",
+    "Swamp",
+    "Swamp",
+    "Forest",
+    "Island",
+    "Forest",
+    "The Dawning Archaic",
+    "Skycoach Waypoint",
+    "Fractal Mascot",
+    "Biblioplex Tomekeeper",
+    "Ulna Alley Shopkeep",
+    "Eternal Student",
+    "Chelonian Tackle",
+    "Island",
+    "Island",
+    "Island",
+    "Textbook Tabulator",
+    "Landscape Painter",
+    "Muse Seeker",
+    "Quick Study",
+    "Harmonized Trio",
+    "Tester of the Tangential",
+    "Forest",
+    "Tenured Concocter",
+    "Feed the Swarm",
+    "Bitter Triumph",
+    "Vicious Rivalry",
+    "Lecturing Scornmage",
+    "Pest Mascot",
+    "Ambitious Augmenter",
+    "Embrace the Paradox",
+    "Lluwen, Exchange Student",
+    "Masterful Flourish",
+    "Titan's Grave",
+    "Deathcap Glade"
+  ],
+  "matches": [
+    {
+      "extracted": "Swamp",
+      "canonical": "Swamp",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Island",
+      "canonical": "Island",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Forest",
+      "canonical": "Forest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "The Dawning Archaic",
+      "canonical": "The Dawning Archaic",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Skycoach Waypoint",
+      "canonical": "Skycoach Waypoint",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Fractal Mascot",
+      "canonical": "Fractal Mascot",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Biblioplex Tomekeeper",
+      "canonical": "Biblioplex Tomekeeper",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ulna Alley Shopkeep",
+      "canonical": "Ulna Alley Shopkeep",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Eternal Student",
+      "canonical": "Eternal Student",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Chelonian Tackle",
+      "canonical": "Chelonian Tackle",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Textbook Tabulator",
+      "canonical": "Textbook Tabulator",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Landscape Painter",
+      "canonical": "Landscape Painter // Vibrant Idea",
+      "score": 0.78,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Muse Seeker",
+      "canonical": "Muse Seeker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Quick Study",
+      "canonical": "Quick Study",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Harmonized Trio",
+      "canonical": "Harmonize",
+      "score": 0.837,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Tester of the Tangential",
+      "canonical": "Tester of the Tangential",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Tenured Concocter",
+      "canonical": "Tenured Concocter",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Feed the Swarm",
+      "canonical": "Feed the Swarm",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Bitter Triumph",
+      "canonical": "Bitter Triumph",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Vicious Rivalry",
+      "canonical": "Vicious Rivalry",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Lecturing Scornmage",
+      "canonical": "Lecturing Scornmage",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Pest Mascot",
+      "canonical": "Pest Mascot",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ambitious Augmenter",
+      "canonical": "Ambitious Augmenter",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Embrace the Paradox",
+      "canonical": "Embrace the Paradox",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Lluwen, Exchange Student",
+      "canonical": "Lluwen, Exchange Student // Pest Friend",
+      "score": 0.829,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Masterful Flourish",
+      "canonical": "Masterful Flourish",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Titan's Grave",
+      "canonical": "Titan's Grave",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Deathcap Glade",
+      "canonical": "Deathcap Glade",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Island",
+      "count": 6
+    },
+    {
+      "card_name": "Forest",
+      "count": 4
+    },
+    {
+      "card_name": "Swamp",
+      "count": 4
+    },
+    {
+      "card_name": "Ambitious Augmenter",
+      "count": 1
+    },
+    {
+      "card_name": "Biblioplex Tomekeeper",
+      "count": 1
+    },
+    {
+      "card_name": "Bitter Triumph",
+      "count": 1
+    },
+    {
+      "card_name": "Chelonian Tackle",
+      "count": 1
+    },
+    {
+      "card_name": "Deathcap Glade",
+      "count": 1
+    },
+    {
+      "card_name": "Embrace the Paradox",
+      "count": 1
+    },
+    {
+      "card_name": "Eternal Student",
+      "count": 1
+    },
+    {
+      "card_name": "Feed the Swarm",
+      "count": 1
+    },
+    {
+      "card_name": "Fractal Mascot",
+      "count": 1
+    },
+    {
+      "card_name": "Harmonize",
+      "count": 1
+    },
+    {
+      "card_name": "Landscape Painter // Vibrant Idea",
+      "count": 1
+    },
+    {
+      "card_name": "Lecturing Scornmage",
+      "count": 1
+    },
+    {
+      "card_name": "Lluwen, Exchange Student // Pest Friend",
+      "count": 1
+    },
+    {
+      "card_name": "Masterful Flourish",
+      "count": 1
+    },
+    {
+      "card_name": "Muse Seeker",
+      "count": 1
+    },
+    {
+      "card_name": "Pest Mascot",
+      "count": 1
+    },
+    {
+      "card_name": "Quick Study",
+      "count": 1
+    },
+    {
+      "card_name": "Skycoach Waypoint",
+      "count": 1
+    },
+    {
+      "card_name": "Tenured Concocter",
+      "count": 1
+    },
+    {
+      "card_name": "Tester of the Tangential",
+      "count": 1
+    },
+    {
+      "card_name": "Textbook Tabulator",
+      "count": 1
+    },
+    {
+      "card_name": "The Dawning Archaic",
+      "count": 1
+    },
+    {
+      "card_name": "Titan's Grave",
+      "count": 1
+    },
+    {
+      "card_name": "Ulna Alley Shopkeep",
+      "count": 1
+    },
+    {
+      "card_name": "Vicious Rivalry",
+      "count": 1
+    }
+  ],
+  "validation": [
+    {
+      "severity": "WARN",
+      "message": "Deck has 39 cards but expected 40 (difference: -1)"
+    }
+  ],
+  "low_confidence_cards": [
+    {
+      "extracted": "Landscape Painter",
+      "canonical": "Landscape Painter // Vibrant Idea",
+      "score": 0.78,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Harmonized Trio",
+      "canonical": "Harmonize",
+      "score": 0.837,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Lluwen, Exchange Student",
+      "canonical": "Lluwen, Exchange Student // Pest Friend",
+      "score": 0.829,
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "deck_name": "julian_strix2_WBG",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/julian_strix2_WBG",
+  "primary_image": "IMG_4161.jpeg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:47:31Z",
+  "timestamp_unix": 1785109651,
+  "deck_size_hint": 40,
+  "total_cards": 40,
+  "unique_cards": 27,
+  "raw_names": [
+    "Imperious Inkmage",
+    "Plains",
+    "Forest",
+    "Plains",
+    "Swamp",
+    "Forest",
+    "Snarl Song",
+    "Forest",
+    "Honorbound Page",
+    "Chelonian Tackle",
+    "Emeritus of Truce",
+    "Emil, Vastlands Roamer",
+    "Plains",
+    "Ascendant Dustspeaker",
+    "Forest",
+    "Elite Interceptor",
+    "Swamp",
+    "Shopkeeper's Bane",
+    "Swamp",
+    "Bogwater Lumaret",
+    "Wild Hypothesis",
+    "Ajani's Response",
+    "Scolding Administrator",
+    "Essenceknit Scholar",
+    "Knockout Maneuver",
+    "Send in the Pest",
+    "Swamp",
+    "Forest",
+    "Practiced Offense",
+    "Plains",
+    "Deathcap Glade",
+    "Render Speechless",
+    "Fracture",
+    "Tenured Concocter",
+    "Repel Calamity",
+    "Swamp",
+    "Noxious Newt",
+    "Plains",
+    "Plains",
+    "Silverquill Charm"
+  ],
+  "matches": [
+    {
+      "extracted": "Imperious Inkmage",
+      "canonical": "Imperious Inkmage",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Plains",
+      "canonical": "Plains",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Forest",
+      "canonical": "Forest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Swamp",
+      "canonical": "Swamp",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Snarl Song",
+      "canonical": "Snarl Song",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Honorbound Page",
+      "canonical": "Honorbound Page // Forum's Favor",
+      "score": 0.768,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Chelonian Tackle",
+      "canonical": "Chelonian Tackle",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Emeritus of Truce",
+      "canonical": "Emeritus of Truce // Swords to Plowshares",
+      "score": 0.76,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Emil, Vastlands Roamer",
+      "canonical": "Emil, Vastlands Roamer",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ascendant Dustspeaker",
+      "canonical": "Ascendant Dustspeaker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Elite Interceptor",
+      "canonical": "Elite Instructor",
+      "score": 0.892,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Shopkeeper's Bane",
+      "canonical": "Shopkeeper's Bane",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Bogwater Lumaret",
+      "canonical": "Bogwater Lumaret",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Wild Hypothesis",
+      "canonical": "Wild Hypothesis",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ajani's Response",
+      "canonical": "Ajani's Response",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Scolding Administrator",
+      "canonical": "Scolding Administrator",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Essenceknit Scholar",
+      "canonical": "Essenceknit Scholar",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Knockout Maneuver",
+      "canonical": "Knockout Maneuver",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Send in the Pest",
+      "canonical": "Send in the Pest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Practiced Offense",
+      "canonical": "Practiced Offense",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Deathcap Glade",
+      "canonical": "Deathcap Glade",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Render Speechless",
+      "canonical": "Render Speechless",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Fracture",
+      "canonical": "Fracture",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Tenured Concocter",
+      "canonical": "Tenured Concocter",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Repel Calamity",
+      "canonical": "Repel Calamity",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Noxious Newt",
+      "canonical": "Noxious Newt",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Silverquill Charm",
+      "canonical": "Silverquill Charm",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Plains",
+      "count": 6
+    },
+    {
+      "card_name": "Forest",
+      "count": 5
+    },
+    {
+      "card_name": "Swamp",
+      "count": 5
+    },
+    {
+      "card_name": "Ajani's Response",
+      "count": 1
+    },
+    {
+      "card_name": "Ascendant Dustspeaker",
+      "count": 1
+    },
+    {
+      "card_name": "Bogwater Lumaret",
+      "count": 1
+    },
+    {
+      "card_name": "Chelonian Tackle",
+      "count": 1
+    },
+    {
+      "card_name": "Deathcap Glade",
+      "count": 1
+    },
+    {
+      "card_name": "Elite Instructor",
+      "count": 1
+    },
+    {
+      "card_name": "Emeritus of Truce // Swords to Plowshares",
+      "count": 1
+    },
+    {
+      "card_name": "Emil, Vastlands Roamer",
+      "count": 1
+    },
+    {
+      "card_name": "Essenceknit Scholar",
+      "count": 1
+    },
+    {
+      "card_name": "Fracture",
+      "count": 1
+    },
+    {
+      "card_name": "Honorbound Page // Forum's Favor",
+      "count": 1
+    },
+    {
+      "card_name": "Imperious Inkmage",
+      "count": 1
+    },
+    {
+      "card_name": "Knockout Maneuver",
+      "count": 1
+    },
+    {
+      "card_name": "Noxious Newt",
+      "count": 1
+    },
+    {
+      "card_name": "Practiced Offense",
+      "count": 1
+    },
+    {
+      "card_name": "Render Speechless",
+      "count": 1
+    },
+    {
+      "card_name": "Repel Calamity",
+      "count": 1
+    },
+    {
+      "card_name": "Scolding Administrator",
+      "count": 1
+    },
+    {
+      "card_name": "Send in the Pest",
+      "count": 1
+    },
+    {
+      "card_name": "Shopkeeper's Bane",
+      "count": 1
+    },
+    {
+      "card_name": "Silverquill Charm",
+      "count": 1
+    },
+    {
+      "card_name": "Snarl Song",
+      "count": 1
+    },
+    {
+      "card_name": "Tenured Concocter",
+      "count": 1
+    },
+    {
+      "card_name": "Wild Hypothesis",
+      "count": 1
+    }
+  ],
+  "validation": [],
+  "low_confidence_cards": [
+    {
+      "extracted": "Honorbound Page",
+      "canonical": "Honorbound Page // Forum's Favor",
+      "score": 0.768,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Emeritus of Truce",
+      "canonical": "Emeritus of Truce // Swords to Plowshares",
+      "score": 0.76,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Elite Interceptor",
+      "canonical": "Elite Instructor",
+      "score": 0.892,
+      "confidence": "low"
+    }
+  ]
+}

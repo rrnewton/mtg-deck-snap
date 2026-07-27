@@ -1,0 +1,297 @@
+{
+  "deck_name": "ryan_strix1_RWU",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/ryan_strix1_RWU",
+  "primary_image": "IMG_4179.jpeg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:48:06Z",
+  "timestamp_unix": 1785109686,
+  "deck_size_hint": 40,
+  "total_cards": 40,
+  "unique_cards": 23,
+  "raw_names": [
+    "Thunderdrum Soloist",
+    "Mountain",
+    "Fields of Strife",
+    "Thunderdrum Soloist",
+    "Tome Blast",
+    "Muse Seeker",
+    "Fractalize",
+    "Molten Note",
+    "Zaffai and the Tempests",
+    "Island",
+    "Plains",
+    "Mountain",
+    "Tablet of Discovery",
+    "Rubble Rouser",
+    "Kirol, History Buff",
+    "Wilt in the Heat",
+    "Molten Note",
+    "Tackle Artist",
+    "Spectacle Summit",
+    "Banishing Betrayal",
+    "Plains",
+    "Burst Lightning",
+    "Mountain",
+    "Colossus of the Blood Age",
+    "Hardened Academic",
+    "Tome Blast",
+    "Island",
+    "Rearing Embermare",
+    "Mountain",
+    "Stock Up",
+    "Island",
+    "Island",
+    "Mountain",
+    "Mountain",
+    "Plains",
+    "Plains",
+    "Essence Scatter",
+    "Spectacle Summit",
+    "Island",
+    "Wilt in the Heat"
+  ],
+  "matches": [
+    {
+      "extracted": "Thunderdrum Soloist",
+      "canonical": "Thunderdrum Soloist",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Mountain",
+      "canonical": "Mountain",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Fields of Strife",
+      "canonical": "Fields of Strife",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Tome Blast",
+      "canonical": "Tome Blast",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Muse Seeker",
+      "canonical": "Muse Seeker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Fractalize",
+      "canonical": "Fractalize",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Molten Note",
+      "canonical": "Molten Note",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Zaffai and the Tempests",
+      "canonical": "Zaffai and the Tempests",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Island",
+      "canonical": "Island",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Plains",
+      "canonical": "Plains",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Tablet of Discovery",
+      "canonical": "Tablet of Discovery",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Rubble Rouser",
+      "canonical": "Rubble Rouser",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Kirol, History Buff",
+      "canonical": "Kirol, History Buff // Pack a Punch",
+      "score": 0.77,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Wilt in the Heat",
+      "canonical": "Wilt in the Heat",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Tackle Artist",
+      "canonical": "Tackle Artist",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Spectacle Summit",
+      "canonical": "Spectacle Summit",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Banishing Betrayal",
+      "canonical": "Banishing Betrayal",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Burst Lightning",
+      "canonical": "Burst Lightning",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Colossus of the Blood Age",
+      "canonical": "Colossus of the Blood Age",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Hardened Academic",
+      "canonical": "Hardened Academic",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Rearing Embermare",
+      "canonical": "Rearing Embermare",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Stock Up",
+      "canonical": "Stock Up",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Essence Scatter",
+      "canonical": "Essence Scatter",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Mountain",
+      "count": 6
+    },
+    {
+      "card_name": "Island",
+      "count": 5
+    },
+    {
+      "card_name": "Plains",
+      "count": 4
+    },
+    {
+      "card_name": "Molten Note",
+      "count": 2
+    },
+    {
+      "card_name": "Spectacle Summit",
+      "count": 2
+    },
+    {
+      "card_name": "Thunderdrum Soloist",
+      "count": 2
+    },
+    {
+      "card_name": "Tome Blast",
+      "count": 2
+    },
+    {
+      "card_name": "Wilt in the Heat",
+      "count": 2
+    },
+    {
+      "card_name": "Banishing Betrayal",
+      "count": 1
+    },
+    {
+      "card_name": "Burst Lightning",
+      "count": 1
+    },
+    {
+      "card_name": "Colossus of the Blood Age",
+      "count": 1
+    },
+    {
+      "card_name": "Essence Scatter",
+      "count": 1
+    },
+    {
+      "card_name": "Fields of Strife",
+      "count": 1
+    },
+    {
+      "card_name": "Fractalize",
+      "count": 1
+    },
+    {
+      "card_name": "Hardened Academic",
+      "count": 1
+    },
+    {
+      "card_name": "Kirol, History Buff // Pack a Punch",
+      "count": 1
+    },
+    {
+      "card_name": "Muse Seeker",
+      "count": 1
+    },
+    {
+      "card_name": "Rearing Embermare",
+      "count": 1
+    },
+    {
+      "card_name": "Rubble Rouser",
+      "count": 1
+    },
+    {
+      "card_name": "Stock Up",
+      "count": 1
+    },
+    {
+      "card_name": "Tablet of Discovery",
+      "count": 1
+    },
+    {
+      "card_name": "Tackle Artist",
+      "count": 1
+    },
+    {
+      "card_name": "Zaffai and the Tempests",
+      "count": 1
+    }
+  ],
+  "validation": [],
+  "low_confidence_cards": [
+    {
+      "extracted": "Kirol, History Buff",
+      "canonical": "Kirol, History Buff // Pack a Punch",
+      "score": 0.77,
+      "confidence": "medium"
+    }
+  ]
+}

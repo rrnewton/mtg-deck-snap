@@ -36,10 +36,7 @@ impl SetIndex {
     pub fn from_entries(entries: Vec<(String, String, String)>) -> Self {
         let mut cards = HashMap::with_capacity(entries.len());
         for (name, set_code, set_name) in entries {
-            cards.insert(
-                name.to_lowercase(),
-                CardSetInfo { set_code, set_name },
-            );
+            cards.insert(name.to_lowercase(), CardSetInfo { set_code, set_name });
         }
         Self { cards }
     }
@@ -54,11 +51,10 @@ impl SetIndex {
     /// Ignores basic lands (they appear in every set). Returns the set code
     /// that appears most frequently, or `None` if no clear majority.
     pub fn majority_set(&self, card_names: &[String]) -> Option<(String, String, usize)> {
-        let basics: std::collections::HashSet<&str> = [
-            "plains", "island", "swamp", "mountain", "forest", "wastes",
-        ]
-        .into_iter()
-        .collect();
+        let basics: std::collections::HashSet<&str> =
+            ["plains", "island", "swamp", "mountain", "forest", "wastes"]
+                .into_iter()
+                .collect();
 
         let mut set_counts: HashMap<String, (String, usize)> = HashMap::new();
         for name in card_names {
@@ -85,11 +81,10 @@ impl SetIndex {
         let majority_code = majority.as_ref().map(|(code, _, _)| code.clone());
         let majority_name = majority.as_ref().map(|(_, name, _)| name.clone());
 
-        let basics: std::collections::HashSet<&str> = [
-            "plains", "island", "swamp", "mountain", "forest", "wastes",
-        ]
-        .into_iter()
-        .collect();
+        let basics: std::collections::HashSet<&str> =
+            ["plains", "island", "swamp", "mountain", "forest", "wastes"]
+                .into_iter()
+                .collect();
 
         card_names
             .iter()
@@ -124,14 +119,42 @@ mod tests {
 
     fn test_index() -> SetIndex {
         SetIndex::from_entries(vec![
-            ("Meteor Sword".into(), "tla".into(), "Avatar: The Last Airbender".into()),
-            ("Otter-Penguin".into(), "tla".into(), "Avatar: The Last Airbender".into()),
-            ("Giant Koi".into(), "tla".into(), "Avatar: The Last Airbender".into()),
-            ("Turtle-Duck".into(), "tla".into(), "Avatar: The Last Airbender".into()),
-            ("Gran-Gran".into(), "tla".into(), "Avatar: The Last Airbender".into()),
+            (
+                "Meteor Sword".into(),
+                "tla".into(),
+                "Avatar: The Last Airbender".into(),
+            ),
+            (
+                "Otter-Penguin".into(),
+                "tla".into(),
+                "Avatar: The Last Airbender".into(),
+            ),
+            (
+                "Giant Koi".into(),
+                "tla".into(),
+                "Avatar: The Last Airbender".into(),
+            ),
+            (
+                "Turtle-Duck".into(),
+                "tla".into(),
+                "Avatar: The Last Airbender".into(),
+            ),
+            (
+                "Gran-Gran".into(),
+                "tla".into(),
+                "Avatar: The Last Airbender".into(),
+            ),
             ("Mist Leopard".into(), "m10".into(), "Magic 2010".into()),
-            ("Lightning Bolt".into(), "leb".into(), "Limited Edition Beta".into()),
-            ("Island".into(), "tla".into(), "Avatar: The Last Airbender".into()),
+            (
+                "Lightning Bolt".into(),
+                "leb".into(),
+                "Limited Edition Beta".into(),
+            ),
+            (
+                "Island".into(),
+                "tla".into(),
+                "Avatar: The Last Airbender".into(),
+            ),
         ])
     }
 
@@ -139,8 +162,13 @@ mod tests {
     fn test_majority_set_detected() {
         let idx = test_index();
         let names: Vec<String> = vec![
-            "Meteor Sword", "Otter-Penguin", "Giant Koi", "Turtle-Duck",
-            "Gran-Gran", "Island", "Island",
+            "Meteor Sword",
+            "Otter-Penguin",
+            "Giant Koi",
+            "Turtle-Duck",
+            "Gran-Gran",
+            "Island",
+            "Island",
         ]
         .into_iter()
         .map(String::from)
@@ -156,8 +184,12 @@ mod tests {
     fn test_outlier_detection() {
         let idx = test_index();
         let names: Vec<String> = vec![
-            "Meteor Sword", "Otter-Penguin", "Giant Koi",
-            "Turtle-Duck", "Mist Leopard", "Island",
+            "Meteor Sword",
+            "Otter-Penguin",
+            "Giant Koi",
+            "Turtle-Duck",
+            "Mist Leopard",
+            "Island",
         ]
         .into_iter()
         .map(String::from)

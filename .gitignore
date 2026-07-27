@@ -2,3 +2,11 @@
 *.swp
 *.swo
 .DS_Store
+
+# Example INPUT images are large (~140MB) and synced from Google Drive, not
+# committed. Populate them with `examples/fetch-inputs.sh` (see the Makefile's
+# `make install-deps` for the gdown dependency).
+/examples/inputs/
+
+# The example OUTPUTS (examples/outputs/) ARE tracked as small test fixtures —
+# do NOT ignore them.

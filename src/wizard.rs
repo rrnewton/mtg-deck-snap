@@ -151,10 +151,7 @@ pub fn resolve_count_violations(entries: &mut [DeckEntry], non_interactive: bool
     for entry in entries.iter_mut() {
         if entry.count > 4 && !basics.contains(entry.card_name.as_str()) {
             if non_interactive {
-                eprintln!(
-                    "  Auto-capping {} × {} → 4",
-                    entry.count, entry.card_name
-                );
+                eprintln!("  Auto-capping {} × {} → 4", entry.count, entry.card_name);
                 entry.count = 4;
             } else {
                 eprintln!(
@@ -178,11 +175,7 @@ pub fn resolve_count_violations(entries: &mut [DeckEntry], non_interactive: bool
 ///
 /// If the deck size is known, check whether the number of basic lands makes sense.
 /// Stacked/fanned lands are the most common source of miscounts.
-pub fn resolve_land_counts(
-    entries: &mut [DeckEntry],
-    expected_size: u32,
-    non_interactive: bool,
-) {
+pub fn resolve_land_counts(entries: &mut [DeckEntry], expected_size: u32, non_interactive: bool) {
     let basics = basic_land_names();
 
     let land_count: u32 = entries
@@ -254,10 +247,7 @@ pub fn resolve_land_counts(
                 for entry in entries.iter_mut() {
                     if basics.contains(entry.card_name.as_str()) && entry.count > 0 {
                         if let Ok(new_count) = Input::<u8>::new()
-                            .with_prompt(format!(
-                                "{} (currently {})",
-                                entry.card_name, entry.count
-                            ))
+                            .with_prompt(format!("{} (currently {})", entry.card_name, entry.count))
                             .default(entry.count)
                             .interact_text()
                         {
@@ -275,11 +265,7 @@ pub fn resolve_land_counts(
 }
 
 /// Proportionally scale basic land counts to hit a target total.
-fn adjust_land_counts(
-    entries: &mut [DeckEntry],
-    basics: &HashSet<&str>,
-    target_total: u32,
-) {
+fn adjust_land_counts(entries: &mut [DeckEntry], basics: &HashSet<&str>, target_total: u32) {
     let current_total: u32 = entries
         .iter()
         .filter(|e| basics.contains(e.card_name.as_str()))

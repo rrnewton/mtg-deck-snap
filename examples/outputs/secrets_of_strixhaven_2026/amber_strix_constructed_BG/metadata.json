@@ -1,0 +1,423 @@
+{
+  "deck_name": "amber_strix_constructed_BG",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/amber_strix_constructed_BG",
+  "primary_image": "IMG_4185.jpeg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:49:07Z",
+  "timestamp_unix": 1785109747,
+  "deck_size_hint": 60,
+  "total_cards": 60,
+  "unique_cards": 33,
+  "raw_names": [
+    "Wildgrowth Archaic",
+    "Blech, Loafing Pest",
+    "Bogwater Lumaret",
+    "Eternal Student",
+    "Swamp",
+    "Swamp",
+    "Melancholic Poet",
+    "Forest",
+    "Forest",
+    "Grapple with Death",
+    "Titan's Grave",
+    "Thornfist Striker",
+    "Emil, Vastlands Roamer",
+    "Essenceknit Scholar",
+    "Lecturing Scornmage",
+    "Swamp",
+    "Swamp",
+    "Forest",
+    "Pull from the Grave",
+    "Titan's Grave",
+    "Send in the Pest",
+    "Scheming Silvertongue",
+    "Deathcap Glade",
+    "Root Manipulation",
+    "Giant Growth",
+    "Old-Growth Educator",
+    "Forest",
+    "Bitter Triumph",
+    "Swamp",
+    "Pest Mascot",
+    "Lumaret's Favor",
+    "Eternal Student",
+    "Burrog Banemaker",
+    "Send in the Pest",
+    "Deathcap Glade",
+    "Masterful Flourish",
+    "Swamp",
+    "Ambitious Augmenter",
+    "Swamp",
+    "Bogwater Lumaret",
+    "Shopkeeper's Bane",
+    "Pest Mascot",
+    "Forest",
+    "Follow the Lumarets",
+    "Knockout Maneuver",
+    "Wander Off",
+    "Leech Collector",
+    "Additive Evolution",
+    "Pull from the Grave",
+    "Swamp",
+    "Oracle's Restoration",
+    "Oracle's Restoration",
+    "Titan's Grave",
+    "Masterful Flourish",
+    "Shopkeeper's Bane",
+    "Forest",
+    "Swamp",
+    "Forest",
+    "Deathcap Glade",
+    "Forest"
+  ],
+  "matches": [
+    {
+      "extracted": "Wildgrowth Archaic",
+      "canonical": "Wildgrowth Archaic",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Blech, Loafing Pest",
+      "canonical": "Blech, Loafing Pest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Bogwater Lumaret",
+      "canonical": "Bogwater Lumaret",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Eternal Student",
+      "canonical": "Eternal Student",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Swamp",
+      "canonical": "Swamp",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Melancholic Poet",
+      "canonical": "Melancholic Poet",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Forest",
+      "canonical": "Forest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Grapple with Death",
+      "canonical": "Grapple with Death",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Titan's Grave",
+      "canonical": "Titan's Grave",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Thornfist Striker",
+      "canonical": "Thornfist Striker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Emil, Vastlands Roamer",
+      "canonical": "Emil, Vastlands Roamer",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Essenceknit Scholar",
+      "canonical": "Essenceknit Scholar",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Lecturing Scornmage",
+      "canonical": "Lecturing Scornmage",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Pull from the Grave",
+      "canonical": "Pull from the Grave",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Send in the Pest",
+      "canonical": "Send in the Pest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Scheming Silvertongue",
+      "canonical": "Scheming Aspirant",
+      "score": 0.793,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Deathcap Glade",
+      "canonical": "Deathcap Glade",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Root Manipulation",
+      "canonical": "Root Manipulation",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Giant Growth",
+      "canonical": "Giant Growth",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Old-Growth Educator",
+      "canonical": "Old-Growth Educator",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Bitter Triumph",
+      "canonical": "Bitter Triumph",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Pest Mascot",
+      "canonical": "Pest Mascot",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Lumaret's Favor",
+      "canonical": "Lumaret's Favor",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Burrog Banemaker",
+      "canonical": "Burrog Banemaker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Masterful Flourish",
+      "canonical": "Masterful Flourish",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ambitious Augmenter",
+      "canonical": "Ambitious Augmenter",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Shopkeeper's Bane",
+      "canonical": "Shopkeeper's Bane",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Follow the Lumarets",
+      "canonical": "Follow the Lumarets",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Knockout Maneuver",
+      "canonical": "Knockout Maneuver",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Wander Off",
+      "canonical": "Wander Off",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Leech Collector",
+      "canonical": "Eye Collector",
+      "score": 0.811,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Additive Evolution",
+      "canonical": "Additive Evolution",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Oracle's Restoration",
+      "canonical": "Oracle's Restoration",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Swamp",
+      "count": 9
+    },
+    {
+      "card_name": "Forest",
+      "count": 8
+    },
+    {
+      "card_name": "Deathcap Glade",
+      "count": 3
+    },
+    {
+      "card_name": "Titan's Grave",
+      "count": 3
+    },
+    {
+      "card_name": "Bogwater Lumaret",
+      "count": 2
+    },
+    {
+      "card_name": "Eternal Student",
+      "count": 2
+    },
+    {
+      "card_name": "Masterful Flourish",
+      "count": 2
+    },
+    {
+      "card_name": "Oracle's Restoration",
+      "count": 2
+    },
+    {
+      "card_name": "Pest Mascot",
+      "count": 2
+    },
+    {
+      "card_name": "Pull from the Grave",
+      "count": 2
+    },
+    {
+      "card_name": "Send in the Pest",
+      "count": 2
+    },
+    {
+      "card_name": "Shopkeeper's Bane",
+      "count": 2
+    },
+    {
+      "card_name": "Additive Evolution",
+      "count": 1
+    },
+    {
+      "card_name": "Ambitious Augmenter",
+      "count": 1
+    },
+    {
+      "card_name": "Bitter Triumph",
+      "count": 1
+    },
+    {
+      "card_name": "Blech, Loafing Pest",
+      "count": 1
+    },
+    {
+      "card_name": "Burrog Banemaker",
+      "count": 1
+    },
+    {
+      "card_name": "Emil, Vastlands Roamer",
+      "count": 1
+    },
+    {
+      "card_name": "Essenceknit Scholar",
+      "count": 1
+    },
+    {
+      "card_name": "Eye Collector",
+      "count": 1
+    },
+    {
+      "card_name": "Follow the Lumarets",
+      "count": 1
+    },
+    {
+      "card_name": "Giant Growth",
+      "count": 1
+    },
+    {
+      "card_name": "Grapple with Death",
+      "count": 1
+    },
+    {
+      "card_name": "Knockout Maneuver",
+      "count": 1
+    },
+    {
+      "card_name": "Lecturing Scornmage",
+      "count": 1
+    },
+    {
+      "card_name": "Lumaret's Favor",
+      "count": 1
+    },
+    {
+      "card_name": "Melancholic Poet",
+      "count": 1
+    },
+    {
+      "card_name": "Old-Growth Educator",
+      "count": 1
+    },
+    {
+      "card_name": "Root Manipulation",
+      "count": 1
+    },
+    {
+      "card_name": "Scheming Aspirant",
+      "count": 1
+    },
+    {
+      "card_name": "Thornfist Striker",
+      "count": 1
+    },
+    {
+      "card_name": "Wander Off",
+      "count": 1
+    },
+    {
+      "card_name": "Wildgrowth Archaic",
+      "count": 1
+    }
+  ],
+  "validation": [],
+  "low_confidence_cards": [
+    {
+      "extracted": "Scheming Silvertongue",
+      "canonical": "Scheming Aspirant",
+      "score": 0.793,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Leech Collector",
+      "canonical": "Eye Collector",
+      "score": 0.811,
+      "confidence": "low"
+    }
+  ]
+}

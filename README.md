@@ -99,6 +99,61 @@ mtg-deck-snap scan photo.jpg --backend gemini --model "gemini-2.5-flash"
 mtg-deck-snap scan photo.jpg --backend anthropic-api   # needs ANTHROPIC_API_KEY
 ```
 
+### Batch mode — process a whole tree of decks
+
+`batch` walks a directory tree and converts many deck photos in one
+non-interactive run (auto-accept; it never blocks on prompts):
+
+```bash
+# Walk examples/inputs/ recursively and write results to examples/outputs/
+mtg-deck-snap batch --deck-size 40
+
+# Custom roots, and reprocess everything even if outputs already exist
+mtg-deck-snap batch --inputs-root photos --outputs-root results --force
+
+# Process only specific deck directories (still mirrored under --outputs-root)
+mtg-deck-snap batch examples/inputs/secrets_of_strixhaven_2026/amber_strix1_BG
+```
+
+How it works:
+
+- **Deck directory** = any directory holding exactly one top-level image
+  (`jpg`/`jpeg`/`png`/`heic`/`webp`). That image is the primary photo. A
+  `.DS_Store` or other non-image file is ignored, and any `extra/` subfolder is
+  ignored for now (reserved for a future multi-image-confidence feature).
+- Directories with no top-level image (e.g. a batch folder like
+  `secrets_of_strixhaven_2026/`, or the inputs root itself) are containers and
+  are descended into recursively.
+- Each deck dir's path *relative to `--inputs-root`* is **mirrored** into
+  `--outputs-root`. For example
+  `examples/inputs/secrets_of_strixhaven_2026/amber_strix1_BG/IMG_4171.jpeg`
+  produces
+  `examples/outputs/secrets_of_strixhaven_2026/amber_strix1_BG/{amber_strix1_BG.dck, metadata.json}`.
+- `metadata.json` is machine-readable: the raw extracted names, every fuzzy
+  match with score + confidence, the final deck list, validation results, the
+  backend/model used, and a timestamp. The output directory is designed to hold
+  more metadata as the pipeline improves.
+- **Idempotent**: a deck dir whose output `.dck` already exists is skipped
+  (no vision call). Pass `--force` to reprocess.
+- Uses the `claude-cli` backend by default (no API key — your Claude
+  subscription).
+
+### Example inputs / outputs
+
+The `examples/` directory demonstrates batch mode:
+
+- `examples/inputs/` — the source photos. These are large (~140 MB) and are
+  **not committed** (git-ignored). Populate them with
+  `examples/fetch-inputs.sh` (downloads a public Google Drive folder via
+  `gdown`; run `make install-deps` first to provision `gdown` via `uv`).
+- `examples/outputs/` — the generated `.dck` + `metadata.json` fixtures. These
+  are small and **are committed**, so the expected results are reviewable
+  without the images.
+
+Because outputs mirror inputs' subpaths and never share filenames with the
+images, `rsync examples/outputs/ examples/inputs/` reproduces the interleaved
+view without overwriting anything.
+
 ### Bypass AI vision with a text file
 
 If you've already extracted card names (one per line, duplicates included):

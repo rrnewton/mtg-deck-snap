@@ -1,0 +1,327 @@
+{
+  "deck_name": "julian_strix3_RW",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/julian_strix3_RW",
+  "primary_image": "IMG_4164.jpeg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:47:50Z",
+  "timestamp_unix": 1785109670,
+  "deck_size_hint": 40,
+  "total_cards": 40,
+  "unique_cards": 26,
+  "raw_names": [
+    "Primary Research",
+    "Helping Hand",
+    "Borrowed Knowledge",
+    "Ajani's Response",
+    "Plains",
+    "Heated Argument",
+    "Honorbound Page",
+    "Rapier Wit",
+    "Plains",
+    "Mountain",
+    "Unsubtle Mockery",
+    "Dig Site Inventory",
+    "Plains",
+    "Choreographed Sparks",
+    "Mountain",
+    "Mountain",
+    "Ascendant Dustspeaker",
+    "Expressive Firedancer",
+    "Rehearsed Debater",
+    "Plains",
+    "Plains",
+    "Fields of Strife",
+    "Requisition Raid",
+    "Owlin Historian",
+    "Daydream",
+    "Mountain",
+    "Stirring Hopesinger",
+    "Summoned Dromedary",
+    "Mountain",
+    "Plains",
+    "Stone Docent",
+    "Plains",
+    "Plains",
+    "Thunderdrum Soloist",
+    "Mountain",
+    "Lorehold Charm",
+    "Tome Blast",
+    "Eager Glyphmage",
+    "Mountain",
+    "Plains"
+  ],
+  "matches": [
+    {
+      "extracted": "Primary Research",
+      "canonical": "Primary Research",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Helping Hand",
+      "canonical": "Helping Hand",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Borrowed Knowledge",
+      "canonical": "Borrowed Knowledge",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ajani's Response",
+      "canonical": "Ajani's Response",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Plains",
+      "canonical": "Plains",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Heated Argument",
+      "canonical": "Heated Argument",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Honorbound Page",
+      "canonical": "Honorbound Page // Forum's Favor",
+      "score": 0.768,
+      "confidence": "medium"
+    },
+    {
+      "extracted": "Rapier Wit",
+      "canonical": "Rapier Wit",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Mountain",
+      "canonical": "Mountain",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Unsubtle Mockery",
+      "canonical": "Unsubtle Mockery",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Dig Site Inventory",
+      "canonical": "Dig Site Inventory",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Choreographed Sparks",
+      "canonical": "Choreographed Sparks",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Ascendant Dustspeaker",
+      "canonical": "Ascendant Dustspeaker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Expressive Firedancer",
+      "canonical": "Expressive Firedancer",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Rehearsed Debater",
+      "canonical": "Rehearsed Debater",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Fields of Strife",
+      "canonical": "Fields of Strife",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Requisition Raid",
+      "canonical": "Requisition Raid",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Owlin Historian",
+      "canonical": "Owlin Historian",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Daydream",
+      "canonical": "Daydream",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Stirring Hopesinger",
+      "canonical": "Stirring Hopesinger",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Summoned Dromedary",
+      "canonical": "Summoned Dromedary",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Stone Docent",
+      "canonical": "Stone Docent",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Thunderdrum Soloist",
+      "canonical": "Thunderdrum Soloist",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Lorehold Charm",
+      "canonical": "Lorehold Charm",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Tome Blast",
+      "canonical": "Tome Blast",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Eager Glyphmage",
+      "canonical": "Eager Glyphmage",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Plains",
+      "count": 9
+    },
+    {
+      "card_name": "Mountain",
+      "count": 7
+    },
+    {
+      "card_name": "Ajani's Response",
+      "count": 1
+    },
+    {
+      "card_name": "Ascendant Dustspeaker",
+      "count": 1
+    },
+    {
+      "card_name": "Borrowed Knowledge",
+      "count": 1
+    },
+    {
+      "card_name": "Choreographed Sparks",
+      "count": 1
+    },
+    {
+      "card_name": "Daydream",
+      "count": 1
+    },
+    {
+      "card_name": "Dig Site Inventory",
+      "count": 1
+    },
+    {
+      "card_name": "Eager Glyphmage",
+      "count": 1
+    },
+    {
+      "card_name": "Expressive Firedancer",
+      "count": 1
+    },
+    {
+      "card_name": "Fields of Strife",
+      "count": 1
+    },
+    {
+      "card_name": "Heated Argument",
+      "count": 1
+    },
+    {
+      "card_name": "Helping Hand",
+      "count": 1
+    },
+    {
+      "card_name": "Honorbound Page // Forum's Favor",
+      "count": 1
+    },
+    {
+      "card_name": "Lorehold Charm",
+      "count": 1
+    },
+    {
+      "card_name": "Owlin Historian",
+      "count": 1
+    },
+    {
+      "card_name": "Primary Research",
+      "count": 1
+    },
+    {
+      "card_name": "Rapier Wit",
+      "count": 1
+    },
+    {
+      "card_name": "Rehearsed Debater",
+      "count": 1
+    },
+    {
+      "card_name": "Requisition Raid",
+      "count": 1
+    },
+    {
+      "card_name": "Stirring Hopesinger",
+      "count": 1
+    },
+    {
+      "card_name": "Stone Docent",
+      "count": 1
+    },
+    {
+      "card_name": "Summoned Dromedary",
+      "count": 1
+    },
+    {
+      "card_name": "Thunderdrum Soloist",
+      "count": 1
+    },
+    {
+      "card_name": "Tome Blast",
+      "count": 1
+    },
+    {
+      "card_name": "Unsubtle Mockery",
+      "count": 1
+    }
+  ],
+  "validation": [],
+  "low_confidence_cards": [
+    {
+      "extracted": "Honorbound Page",
+      "canonical": "Honorbound Page // Forum's Favor",
+      "score": 0.768,
+      "confidence": "medium"
+    }
+  ]
+}

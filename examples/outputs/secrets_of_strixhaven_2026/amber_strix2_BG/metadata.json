@@ -1,0 +1,340 @@
+{
+  "deck_name": "amber_strix2_BG",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/amber_strix2_BG",
+  "primary_image": "IMG_4167.jpeg",
+  "backend": "claude-cli",
+  "model": null,
+  "timestamp": "2026-07-26T23:46:34Z",
+  "timestamp_unix": 1785109594,
+  "deck_size_hint": 40,
+  "total_cards": 40,
+  "unique_cards": 25,
+  "raw_names": [
+    "Burrog Banemaker",
+    "Wild Hypothesis",
+    "Swamp",
+    "Swamp",
+    "Efflorescence",
+    "Oracle's Restoration",
+    "Leech Collector",
+    "Bogwater Lumaret",
+    "Swamp",
+    "Swamp",
+    "Tenured Concocter",
+    "Swamp",
+    "Root Manipulation",
+    "Send in the Pest",
+    "Swamp",
+    "Eternal Student",
+    "Moseo, Vein's New Dean",
+    "Adventurous Eater",
+    "Forest",
+    "Last Gasp",
+    "Forest",
+    "Last Gasp",
+    "Chelonian Tackle",
+    "Forest",
+    "Grapple with Death",
+    "Forest",
+    "Grave Researcher",
+    "Forest",
+    "Swamp",
+    "Swamp",
+    "Adventurous Eater",
+    "Swamp",
+    "Leech Collector",
+    "Forest",
+    "Swamp",
+    "Cost of Brilliance",
+    "Swamp",
+    "Lumaret's Favor",
+    "Melancholic Poet",
+    "Emeritus of Woe",
+    "Burrog Banemaker",
+    "Glorious Decay",
+    "Masterful Flourish",
+    "Swamp",
+    "Deathcap Glade"
+  ],
+  "matches": [
+    {
+      "extracted": "Burrog Banemaker",
+      "canonical": "Burrog Banemaker",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Wild Hypothesis",
+      "canonical": "Wild Hypothesis",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Swamp",
+      "canonical": "Swamp",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Efflorescence",
+      "canonical": "Efflorescence",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Oracle's Restoration",
+      "canonical": "Oracle's Restoration",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Leech Collector",
+      "canonical": "Eye Collector",
+      "score": 0.811,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Bogwater Lumaret",
+      "canonical": "Bogwater Lumaret",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Tenured Concocter",
+      "canonical": "Tenured Concocter",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Root Manipulation",
+      "canonical": "Root Manipulation",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Send in the Pest",
+      "canonical": "Send in the Pest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Eternal Student",
+      "canonical": "Eternal Student",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Moseo, Vein's New Dean",
+      "canonical": "Moseo, Vein's New Dean",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Adventurous Eater",
+      "canonical": "Adventuring Gear",
+      "score": 0.829,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Forest",
+      "canonical": "Forest",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Last Gasp",
+      "canonical": "Last Gasp",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Chelonian Tackle",
+      "canonical": "Chelonian Tackle",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Grapple with Death",
+      "canonical": "Grapple with Death",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Grave Researcher",
+      "canonical": "Warped Researcher",
+      "score": 0.821,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Cost of Brilliance",
+      "canonical": "Cost of Brilliance",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Lumaret's Favor",
+      "canonical": "Lumaret's Favor",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Melancholic Poet",
+      "canonical": "Melancholic Poet",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Emeritus of Woe",
+      "canonical": "Emeritus of Woe // Emeritus of Woe",
+      "score": 0.802,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Glorious Decay",
+      "canonical": "Glorious Decay",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Masterful Flourish",
+      "canonical": "Masterful Flourish",
+      "score": 1.0,
+      "confidence": "exact"
+    },
+    {
+      "extracted": "Deathcap Glade",
+      "canonical": "Deathcap Glade",
+      "score": 1.0,
+      "confidence": "exact"
+    }
+  ],
+  "deck": [
+    {
+      "card_name": "Swamp",
+      "count": 9
+    },
+    {
+      "card_name": "Forest",
+      "count": 4
+    },
+    {
+      "card_name": "Adventuring Gear",
+      "count": 2
+    },
+    {
+      "card_name": "Burrog Banemaker",
+      "count": 2
+    },
+    {
+      "card_name": "Eye Collector",
+      "count": 2
+    },
+    {
+      "card_name": "Last Gasp",
+      "count": 2
+    },
+    {
+      "card_name": "Bogwater Lumaret",
+      "count": 1
+    },
+    {
+      "card_name": "Chelonian Tackle",
+      "count": 1
+    },
+    {
+      "card_name": "Cost of Brilliance",
+      "count": 1
+    },
+    {
+      "card_name": "Deathcap Glade",
+      "count": 1
+    },
+    {
+      "card_name": "Efflorescence",
+      "count": 1
+    },
+    {
+      "card_name": "Emeritus of Woe // Emeritus of Woe",
+      "count": 1
+    },
+    {
+      "card_name": "Eternal Student",
+      "count": 1
+    },
+    {
+      "card_name": "Glorious Decay",
+      "count": 1
+    },
+    {
+      "card_name": "Grapple with Death",
+      "count": 1
+    },
+    {
+      "card_name": "Lumaret's Favor",
+      "count": 1
+    },
+    {
+      "card_name": "Masterful Flourish",
+      "count": 1
+    },
+    {
+      "card_name": "Melancholic Poet",
+      "count": 1
+    },
+    {
+      "card_name": "Moseo, Vein's New Dean",
+      "count": 1
+    },
+    {
+      "card_name": "Oracle's Restoration",
+      "count": 1
+    },
+    {
+      "card_name": "Root Manipulation",
+      "count": 1
+    },
+    {
+      "card_name": "Send in the Pest",
+      "count": 1
+    },
+    {
+      "card_name": "Tenured Concocter",
+      "count": 1
+    },
+    {
+      "card_name": "Warped Researcher",
+      "count": 1
+    },
+    {
+      "card_name": "Wild Hypothesis",
+      "count": 1
+    }
+  ],
+  "validation": [],
+  "low_confidence_cards": [
+    {
+      "extracted": "Leech Collector",
+      "canonical": "Eye Collector",
+      "score": 0.811,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Adventurous Eater",
+      "canonical": "Adventuring Gear",
+      "score": 0.829,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Grave Researcher",
+      "canonical": "Warped Researcher",
+      "score": 0.821,
+      "confidence": "low"
+    },
+    {
+      "extracted": "Emeritus of Woe",
+      "canonical": "Emeritus of Woe // Emeritus of Woe",
+      "score": 0.802,
+      "confidence": "low"
+    }
+  ]
+}
