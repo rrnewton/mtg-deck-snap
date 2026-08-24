@@ -1,6 +1,6 @@
 {
-  "deck_name": "ryan_strix2_GB",
-  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/ryan_strix2_GB",
+  "deck_name": "ryan_strix2_GU",
+  "input_dir": "examples/inputs/secrets_of_strixhaven_2026/ryan_strix2_GU",
   "primary_image": "IMG_4178.jpeg",
   "backend": "claude-cli",
   "model": null,
